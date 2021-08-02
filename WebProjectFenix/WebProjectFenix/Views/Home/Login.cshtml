@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+
+<script>
+    document.getElementById('sidebarToggle').style.display = "none";
+    document.getElementById('iconuser').style.display = "none";
+    document.getElementById('layoutSidenav').style.display = "none";
+</script>
+
+<style>
+    #ws {
+        height: 100%; 
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-image: url(../img/tmasi.jpg)
+    }
+
+    .card-container.card {
+        max-width: 450px;
+        padding: 45px 45px;
+        margin-top: 40px;
+
+    }
+
+    #cardx {
+        max-width: 680px;
+        padding: 20px 20px;
+        float: left; 
+        margin-top: 50px; 
+        display: flex; 
+        flex-direction: column;
+    }
+    /*
+ * Card component   
+ */
+    .card {
+        background-color: #ffffff00;
+        margin: 0 auto 25px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-img-card {
+        width: 96px;
+        height: 80px;
+        margin: 0 auto 10px;
+        display: block;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    #inputEmail,
+    #inputPassword {
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 2px solid #126B6D;
+        color: white;
+        max-width:500px;
+    }
+
+    #inputEmail:focus,
+    #inputPassword:focus {
+        border-bottom: 2px solid white;
+    }
+    .form-signin input[type=email],
+    .form-signin input[type=password],
+    .form-signin input[type=text],
+    .form-signin button {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        z-index: 1;
+        position: relative;
+        padding-top: 10px;
+    }
+    .btn.btn-signin {
+        padding: 0px;
+        height: 36px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: none;
+        margin-bottom: 20px;
+        background: linear-gradient(180DEG, #48C8C4 0%, #0D4948 100%);
+        transition: all .3s;
+    }
+
+    .btn.btn-signin:hover,
+    .btn.btn-signin:active,
+    .btn.btn-signin:focus {
+       background: linear-gradient(180deg, #0D4948 0%, #48C8C4 100%);
+       transition: all .3s;
+    }
+    #contncard {
+         padding-top:135px;
+         padding-bottom:80px;
+    }
+    #remember{
+        padding-top:27px;
+        padding-bottom:30px;
+        color:white;
+    }
+    .forgot-password{
+        color:white;
+    }
+    #cardx img {
+        width: 490px;
+        height: 170px;
+        padding-top: 50px;
+    }
+    #leyenda {
+        color: white;
+        font-family: 'Courgette', cursive;
+        text-align: center;
+        margin-top: 35px;
+    }
+    #autor {
+        font-family: 'Style Script', cursive;  
+        text-align:center;  
+        color: white; 
+        font-size:20px;
+    }
+
+
+</style>
+
+<div id="ws">
+    <div class="container" id="contncard">
+        <div class="container">
+            <div class="container">
+                <div id="cardx">
+                    <!--Contenedor de imagen y parráfo-->
+                     <img src="~/img/LOGOactualizado.png" alt="Alternate Text"  />
+                      <p id="leyenda">
+                            “Saber envejecer es la mayor de las sabidurías y uno de los más <br>
+                            difíciles capítulos del gran arte de vivir”
+                      </p>
+                      <p id="autor">(Enrique Federico Amiel)</p>
+                </div>
+                <div class="card card-container" >
+                    <img id="profile-img" class="profile-img-card" src="/img/logopeque.png" />
+                    <p id="profile-name" class="profile-name-card"></p>
+                    <form class="form-signin">
+                        <span id="reauth-email" class="reauth-email"></span>
+                        <input  type="email" id="inputEmail" placeholder="Email address" required>
+                        <input  type="password" id="inputPassword" placeholder="Password" required>
+                        <div id="remember" class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                    </form>
+                    <a href="#" class="forgot-password">
+                        Forgot the password?
+                    </a>
+                </div>
+            </div>
+         </div>
+   </div>
+</div>
