@@ -17,8 +17,157 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
+}*/
+
+/*CSS PRINCIPAL  _LayoutPrincipal*/
+:root {
+    --primary: #126B6D;
+    --light: #ffffff;
+    --grey: #efefef;
 }
+
+#imgpri {
+    width: 12.9rem;
+    height: 3.2rem;
+}
+
+#latizq {
+    background-color: var(--primary);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+    color: #B7B8BB;
+}
+
+
+/* Login */
+
+#ws {
+        height: 100%; 
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-image: url(../img/tmasi.jpg)
+    }
+
+    .card-container.card {
+        max-width: 450px;
+        padding: 45px 45px;
+        margin-top: 40px;
+
+    }
+
+    #cardx {
+        max-width: 680px;
+        padding: 20px 20px;
+        float: left; 
+        margin-top: 50px; 
+        display: flex; 
+        flex-direction: column;
+    }
+
+.card {
+    /*background-color: #ffffff00;*/
+    /*background: transparent;*/
+    margin: 0 auto 25px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+    .profile-img-card {
+        width: 96px;
+        height: 80px;
+        margin: 0 auto 10px;
+        display: block;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    #inputEmail,
+    #inputPassword {
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 2px solid #126B6D;
+        color: white;
+        max-width:500px;
+    }
+
+    #inputEmail:focus,
+    #inputPassword:focus {
+        border-bottom: 2px solid white;
+    }
+
+    .form-signin input[type=email],
+    .form-signin input[type=password],
+    .form-signin input[type=text],
+    .form-signin button {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        z-index: 1;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .btn.btn-signin {
+        padding: 0px;
+        height: 36px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: none;
+        margin-bottom: 20px;
+        background: linear-gradient(180DEG, #48C8C4 0%, #0D4948 100%);
+        transition: all .3s;
+    }
+
+    .btn.btn-signin:hover,
+    .btn.btn-signin:active,
+    .btn.btn-signin:focus {
+       background: linear-gradient(180deg, #0D4948 0%, #48C8C4 100%);
+       transition: all .3s;
+    }
+
+    #contncard {
+         padding-top:135px;
+         padding-bottom:80px;
+    }
+    #remember{
+        padding-top:27px;
+        padding-bottom:30px;
+        color:white;
+    }
+
+    .forgot-password{
+        color:white;
+    }
+
+    #cardx img {
+        width: 490px;
+        height: 170px;
+        padding-top: 50px;
+    }
+
+    #leyenda {
+        color: white;
+        font-family: 'Courgette', cursive;
+        text-align: center;
+        margin-top: 35px;
+    }
+
+    #autor {
+        font-family: 'Style Script', cursive;  
+        text-align:center;  
+        color: white; 
+        font-size:20px;
+    }
