@@ -31,7 +31,7 @@ namespace WebProjectFenix
             //..STYLES  revisar
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                      "~/Content/Site.css",
                       "~/Content/Styles/styles.css"));  //Diseño de Plantilla por defecto
         }
     }

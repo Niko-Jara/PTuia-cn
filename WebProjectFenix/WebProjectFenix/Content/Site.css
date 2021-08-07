@@ -53,21 +53,26 @@ textarea {
         background-image: url(../img/tmasi.jpg)
     }
 
-    .card-container.card {
-        max-width: 450px;
-        padding: 45px 45px;
-        margin-top: 40px;
+.card-container.card {
+    max-width: 450px;
+    padding: 45px 45px;
+    margin-top: 40px;
+}
+#prueba {
+    border:1px solid red;
+}
 
-    }
-
-    #cardx {
-        max-width: 680px;
-        padding: 20px 20px;
-        float: left; 
-        margin-top: 50px; 
-        display: flex; 
-        flex-direction: column;
-    }
+  
+#cardx {
+    max-width: 680px;
+    padding: 20px 20px;
+    float: left;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-right:190px;
+    
+}
 
 .card {
     /*background-color: #ffffff00;*/
