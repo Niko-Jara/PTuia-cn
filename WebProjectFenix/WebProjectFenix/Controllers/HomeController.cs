@@ -26,5 +26,11 @@ namespace WebProjectFenix.Controllers
 
             return View();
         }
+        public ActionResult Colaborador()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
