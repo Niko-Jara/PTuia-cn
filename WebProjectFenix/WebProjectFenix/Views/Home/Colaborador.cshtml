@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Colaborador";
+}
+
+<h2 id="titleCol">Colaborador</h2>
+
+<div id="SecColab" class="container" >
+    <form>
+        <div>
+            <h6>Información Personal</h6>
+        </div>
+
+        <!--PRIMERA FILA-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <input class="inputh" type="text" name="cedula" placeholder="Cédula" />
+                </div>
+            </div>
+        </div>
+        <!--SEGUNDA FILA-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <input class=" inputh" type="text" name="nombre" placeholder="Nombre" />
+                </div>
+                <div class="col-md-4">
+                    <input class=" inputh" type="text" name="papellido" placeholder="Primer Apellido" />
+                </div>
+                <div class="col-md-4">
+                    <input class=" inputh" type="text" name="sapellido" placeholder="Segundo Apellido" />
+                </div>
+            </div>
+        </div>
+        <!--TERCERA FILA-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <input class="inputh" type="text" placeholder="Fecha Nacimiento"
+                           onfocus="(this.type='date')">
+                </div>
+                <div class="col-md-4">
+                    <select class="inputh" name="Estado civil">
+                        <option value="value0">Estado civil</option>
+                        <option value="value1">Casado</option>
+                        <option value="value2">Soltero</option>
+                        <option value="value3">Divorciado</option>
+                        <option value="value3">Viudo</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="inputh" name="Género">
+                        <option value="value1">Género</option>
+                        <option value="value1">Femenino</option>
+                        <option value="value2">Masculino</option>
+                        <option value="value3">Otro</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!--CUARTA FILA-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <input class=" inputh" type="text" name="telef" placeholder="Teléfono" />
+                </div>
+                <div class="col-md-4">
+                    <input class="inputh" type="text" name="correo" placeholder="Correo" />
+                </div>
+                <div class="col-md-4">
+                    <input class="inputh" type="text" name="correo" placeholder="Cor" />
+                </div>
+            </div>
+        </div>
+        <!--QUINTA FILA-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <input class=" inputh" type="text" name="provincia" placeholder="Provincia" />
+                </div>
+                <div class="col-md-4">
+                    <input class=" inputh" type="text" name="canton" placeholder="Cantón" />
+                </div>
+                <div class="col-md-4">
+                    <input class=" inputh" type="text" name="distrito" placeholder="Distrito" />
+                </div>
+            </div>
+        </div>
+        <!--Button FILA-->
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="btnColabGuardar" class="btn btn-primary" type="button">
+                        Siguiente
+                    </button>
+                    <button id="btnColabLimpiar" class="btn btn-primary" type="button">
+                        Limpiar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
