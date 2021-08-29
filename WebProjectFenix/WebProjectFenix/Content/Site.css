@@ -183,54 +183,22 @@ textarea {
 }
 
 /*SECCION COLABORADOR*/
-#SecColab,
-#SecCorreo,
-#SecTelef,
-#SecSalario,
-#SecVacaciones,
-#SecAguinaldo,
-#SecPreaviso,
-#SecCesantia,
-#SecFeriados,
-#SecHorasExtra,
-#SecUsuario {
+.sections {
     margin-top: 25px;
 }
-
 .sechead {
     margin-top: 45px;
 }
-
-#btnAddColab,
-#btnAddEmail,
-#btnAddTelf,
-#btnAddSal,
-#btnAddVacaciones,
-#btnAddAguinaldo,
-#btnAddPreaviso,
-#btnAddCesantia,
-#btnAddFeriados,
-#btnAddHorasExtra,
-#btnAddUsuarios {
+.btns {
     margin-left: 20px;
 }
 
-#imgAddcolab,
-#imgAddcorr,
-#imgAddtelef,
-#imgAddSal,
-#imgAddvaca,
-#imgAddagui,
-#imgAddPrea,
-#imgAddPreaviso,
-#imgAddCesa,
-#imgAddFeriado,
-#imgAddHextra,
-#imgAddUsuario {
+.imgsadd {
     margin-left: 5px;
-    width: 23px;
-    height: 23px;
+    width: 24px;
+    height: 24px;
 }
+
 
 #modalcolab, 
 #modalmodcol {
@@ -277,6 +245,7 @@ textarea {
 /*SECCION CORREO  */
 
 /*MODALCORREOsection PUEDEN PONER COMO CLASES*/
+/*REVISAR NO SE PUEDEN PONER COMO CLASE SE PIERDE EL DISEÑO  */
 
 #modalcorr,
 #modalmodcorr,
@@ -324,55 +293,12 @@ textarea {
     margin-top: 100px;
 }
 
-#bodymodalcorr,
-#bodymodaledcorr,
-#bodymodaltelf,
-#bodymodalmtel,
-#bodymodalsal,
-#bodymodalmsal,
-#bodymodalvac,
-#bodymodaledvac,
-#bodymodalagui,
-#bodymodaledagui,
-#bodymodalpreav,
-#bodymodaledpreav,
-#bodymodalcesan,
-#bodymodalmcesa,
-#bodymodalferia,
-#bodymodalmferia,
-#bodymodalhextra,
-#bodymodalmhextra,
-#bodymodaluser,
-#bodymodalmuser {
+.mbody {
     margin-top: 30px;
     padding-bottom: 20px;
     margin-left: 25px;
 }
 
-#imgdcor,
-#imgmodcorr,
-#imgmodtelef,
-#imgdtel,
-#imgdsal,
-#imgmodsal,
-#imgvac,
-#imgmodvac,
-#imgdag,
-#imgmodagui,
-#imgdprea,
-#imgmodpreav,
-#imgdces,
-#imgmodcesa,
-#imgfer,
-#imgmodferia,
-#imgdhextra,
-#imgmodextra,
-#imgduser,
-#imgmoduser {
-    margin-left: 10px;
-    width: 25px;
-    height: 25px;
-}
 
 .inputr {
     border: none;
