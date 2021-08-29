@@ -1,45 +1,45 @@
-﻿
-@{
-    ViewBag.Title = "Colaborador";
+﻿@{
+    ViewBag.Title = "HorasExtra";
 }
 
-
 <div>
-    <h2 id="titleCol">Registro de Colaboradores</h2>
+    <h2 id="titleCol">Registro de Horas Extra</h2>
 </div>
 <div class="sechead">
-    <button id="btnAddColab" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Colaborador<img id="imgAddcolab" src="/img/user.png" /></button>
+    <button id="btnAddHorasExtra" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#HorasExtra">Registrar Horas Extras<img id="imgAddHextra" src="/img/user.png" /></button>
 </div>
 
-<div id="SecColab" class="container">
+<div id="SecHorasExtra" class="container">
     <form>
         <!--DATA TABLE-->
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Información Personal
+                Información Horas Extra
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No</th>
+                            <th>Cédula</th>
+                            <th>Descripcion</th>
+                            <th>Fecha Emisión</th>
+                            <th>Monto</th>
+                            <th>Meses</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>No</th>
+                            <th>Cédula</th>
+                            <th>Descripcion</th>
+                            <th>Fecha Emisión</th>
+                            <th>Monto</th>
+                            <th>Meses</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </tfoot>
@@ -48,21 +48,23 @@
                             <td>Tiger Nixon</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>61</td>
                             <td>2011/04/25</td>
-                            <td>$320,800</td>
                             <td>
-                                <a style="padding-left:30px" href="@Url.Action("Login")" data-bs-toggle="modal" data-bs-target="#ModModal"><img width="20" height="20" src="/img/edit.png" /></a>
-                                <a href="@Url.Action("modaladdcolab")"><img width="20" height="20" src="/img/delete.png" /></a>
+                                <a style="padding-left:30px" href="@Url.Action("Login")" data-bs-toggle="modal" data-bs-target="#ModModalHExtra"><img width="20" height="20" src="/img/edit.png" /></a>
+                                <a href="@Url.Action("ModModalHExtra")"><img width="20" height="20" src="/img/delete.png" /></a>
                             </td>
                         </tr>
                         <tr>
                             <td>Garrett Winters</td>
                             <td>Accountant</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>Tokyo</td>
                             <td>63</td>
                             <td>2011/07/25</td>
-                            <td>$170,750</td>
                             <td>
                                 <a style="padding-left:30px" href="@Url.Action("Login")"><img width="20" height="20" src="/img/edit.png" /></a>
                                 <a onclick="elim()"><img width="20" height="20" src="/img/delete.png" /></a>
@@ -72,9 +74,10 @@
                             <td>Ashton Cox</td>
                             <td>Junior Technical Author</td>
                             <td>San Francisco</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>66</td>
                             <td>2009/01/12</td>
-                            <td>$86,000</td>
                             <td>
                                 <a style="padding-left:30px" href="@Url.Action("Login")"><img width="20" height="20" src="/img/edit.png" /></a>
                                 <a href="@Url.Action("Login")"><img width="20" height="20" src="/img/delete.png" /></a>
@@ -84,194 +87,178 @@
                             <td>Cedric Kelly</td>
                             <td>Senior Javascript Developer</td>
                             <td>Edinburgh</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>22</td>
-                            <td>2012/03/29</td>
                             <td>$433,060</td>
                         </tr>
                         <tr>
                             <td>Airi Satou</td>
                             <td>Accountant</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>Tokyo</td>
                             <td>33</td>
                             <td>2008/11/28</td>
-                            <td>$162,700</td>
                         </tr>
                         <tr>
                             <td>Brielle Williamson</td>
                             <td>Integration Specialist</td>
                             <td>New York</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>61</td>
                             <td>2012/12/02</td>
-                            <td>$372,000</td>
                         </tr>
                         <tr>
                             <td>Herrod Chandler</td>
                             <td>Sales Assistant</td>
                             <td>San Francisco</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>59</td>
                             <td>2012/08/06</td>
-                            <td>$137,500</td>
                         </tr>
                         <tr>
                             <td>Charde Marshall</td>
                             <td>Regional Director</td>
                             <td>San Francisco</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>36</td>
                             <td>2008/10/16</td>
-                            <td>$470,600</td>
                         </tr>
                         <tr>
                             <td>Haley Kennedy</td>
                             <td>Senior Marketing Designer</td>
                             <td>London</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>43</td>
                             <td>2012/12/18</td>
-                            <td>$313,500</td>
                         </tr>
                         <tr>
                             <td>Fiona Green</td>
                             <td>Chief Operating Officer (COO)</td>
                             <td>San Francisco</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>48</td>
                             <td>2010/03/11</td>
-                            <td>$850,000</td>
-                        </tr>
-                        <tr>
-                            <td>Shou Itou</td>
-                            <td>Regional Marketing</td>
-                            <td>Tokyo</td>
-                            <td>20</td>
-                            <td>2011/08/14</td>
-                            <td>$163,000</td>
                         </tr>
                         <tr>
                             <td>Zenaida Frank</td>
                             <td>Software Engineer</td>
                             <td>New York</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>63</td>
                             <td>2010/01/04</td>
-                            <td>$125,250</td>
                         </tr>
                         <tr>
                             <td>Zorita Serrano</td>
                             <td>Software Engineer</td>
                             <td>San Francisco</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>56</td>
                             <td>2012/06/01</td>
-                            <td>$115,000</td>
                         </tr>
                         <tr>
                             <td>Hermione Butler</td>
                             <td>Regional Director</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>London</td>
                             <td>47</td>
                             <td>2011/03/21</td>
-                            <td>$356,250</td>
                         </tr>
                         <tr>
                             <td>Michael Bruce</td>
                             <td>Javascript Developer</td>
                             <td>Singapore</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
                             <td>29</td>
                             <td>2011/06/27</td>
-                            <td>$183,000</td>
                         </tr>
                         <tr>
                             <td>Donna Snider</td>
                             <td>Customer Support</td>
                             <td>New York</td>
+                            <td>Customer Support</td>
+                            <td>New York</td>
                             <td>27</td>
                             <td>2011/01/25</td>
-                            <td>$112,000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!--MODAL REGISTRAR COLABORADORES-->
-        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div id="modalcolab" class="modal-dialog modal-xl">
-                <div id="modalcoconten" class="modal-content">
+        <!--MODAL REGISTRAR HORAS EXTRAS-->
+        <div class="modal" id="HorasExtra" tabindex="-1" aria-labelledby="ModalRegHorasExtra" aria-hidden="true">
+            <div id="modalhoraextra" class="modal-dialog modal-xl">
+                <div id="modalhextra" class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Registrar Datos Personales<img id="imgdp"  src="/img/adduser.png" /></h5>
+                        <h5 class="modal-title" id="ModalRegHorasExtra">Registrar Hora Extra<img id="imgdhextra" src="/img/adduser.png" /></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div id="bodymodalcol">
+                        <div id="bodymodalhextra">
                             <!--FIRST ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" name="cedula" placeholder="Cédula" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="cedula" placeholder="Cédula" />
                                     </div>
                                 </div>
                             </div>
                             <!--SECOND ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="nombre" placeholder="Nombre" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="papellido" placeholder="Primer Apellido" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="sapellido" placeholder="Segundo Apellido" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" placeholder="Fecha"
+                                               onfocus="(this.type='date')">
                                     </div>
                                 </div>
                             </div>
                             <!--THIRD ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" placeholder="Fecha Nacimiento"
-                                               onfocus="(this.type='date')">
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="Hora Inicio" />
                                     </div>
-                                    <div class="col-md-4">
-                                        <select class="inputh" name="Estado civil">
-                                            <option value="value0">Estado civil</option>
-                                            <option value="value1">Casado</option>
-                                            <option value="value2">Soltero</option>
-                                            <option value="value3">Divorciado</option>
-                                            <option value="value3">Viudo</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <select class="inputh" name="Género">
-                                            <option value="value1">Género</option>
-                                            <option value="value1">Femenino</option>
-                                            <option value="value2">Masculino</option>
-                                            <option value="value3">Otro</option>
-                                        </select>
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="Hora Fin" />
                                     </div>
                                 </div>
                             </div>
                             <!--FOURD ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="telef" placeholder="Teléfono" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="Descripción" />
                                     </div>
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" name="correo" placeholder="Correo" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" name="correo" placeholder="Cor" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="TotalHoras" />
                                     </div>
                                 </div>
                             </div>
                             <!--FIVE ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="provincia" placeholder="Provincia" />
+                                    <div class="col-md-6">
+                                        <select class="inputr" name="THoraExtra">
+                                            <option value="value0">Diurna</option>
+                                            <option value="value1">Nocturna</option>
+                                        </select>
                                     </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="canton" placeholder="Cantón" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="distrito" placeholder="Distrito" />
+                                    <div class="col-md-6">
+                                        <select class="inputr" name="Estado">
+                                            <option value="value0">Activo</option>
+                                            <option value="value1">Desactivado</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -289,89 +276,69 @@
             </div>
         </div>
 
-        <!--MODAL MODIFICAR USUARIOS--> <!--revisar mismo id exampleModalLabel-->
-        <div class="modal" id="ModModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div id="modalmodcol" class="modal-dialog modal-xl" >
-                <div id="modalmodcont" class="modal-content" >
+        <!--MODAL MODIFICAR HORA EXTRA--> <!--revisar mismo id exampleModalLabel-->
+        <div class="modal" id="ModModalHExtra" tabindex="-1" aria-labelledby="ModalModHextra" aria-hidden="true">
+            <div id="modalmodHoraext" class="modal-dialog modal-xl">
+                <div id="modalmextra" class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modificar Datos Personales<img id="imgmodc" src="/img/adduser.png" /></h5>
+                        <h5 class="modal-title" id="ModalModHextra">Modificar Hora Extra<img id="imgmodextra" src="/img/adduser.png" /></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div id="bodymodaledit">
+                        <div id="bodymodalmhextra">
                             <!--FIRST ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" name="cedula" placeholder="Cédula" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="cedula" placeholder="Cédula" />
                                     </div>
                                 </div>
                             </div>
                             <!--SECOND ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="nombre" placeholder="Nombre" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="papellido" placeholder="Primer Apellido" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="sapellido" placeholder="Segundo Apellido" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" placeholder="Fecha"
+                                               onfocus="(this.type='date')">
                                     </div>
                                 </div>
                             </div>
                             <!--THIRD ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" placeholder="Fecha Nacimiento"
-                                               onfocus="(this.type='date')">
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="Hora Inicio" />
                                     </div>
-                                    <div class="col-md-4">
-                                        <select class="inputh" name="Estado civil">
-                                            <option value="value0">Estado civil</option>
-                                            <option value="value1">Casado</option>
-                                            <option value="value2">Soltero</option>
-                                            <option value="value3">Divorciado</option>
-                                            <option value="value3">Viudo</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <select class="inputh" name="Género">
-                                            <option value="value1">Género</option>
-                                            <option value="value1">Femenino</option>
-                                            <option value="value2">Masculino</option>
-                                            <option value="value3">Otro</option>
-                                        </select>
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="Hora Fin" />
                                     </div>
                                 </div>
                             </div>
                             <!--FOURD ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="telef" placeholder="Teléfono" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="Descripción" />
                                     </div>
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" name="correo" placeholder="Correo" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class="inputh" type="text" name="correo" placeholder="Cor" />
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="TotalHoras" />
                                     </div>
                                 </div>
                             </div>
                             <!--FIVE ROW-->
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="provincia" placeholder="Provincia" />
+                                    <div class="col-md-6">
+                                        <select class="inputr" name="THoraExtra">
+                                            <option value="value0">Diurna</option>
+                                            <option value="value1">Nocturna</option>
+                                        </select>
                                     </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="canton" placeholder="Cantón" />
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class=" inputh" type="text" name="distrito" placeholder="Distrito" />
+                                    <div class="col-md-6">
+                                        <select class="inputr" name="Estado">
+                                            <option value="value0">Activo</option>
+                                            <option value="value1">Desactivado</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -398,3 +365,5 @@
         alert(msg);
     }
 </script>
+
+

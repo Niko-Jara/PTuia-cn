@@ -24,7 +24,9 @@ namespace WebProjectFenix
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/js/scripts.js",
-                      "~/Scripts/js/efect.js"));      //Diseño de Plantilla por defecto
+                      "~/Scripts/js/efect.js",
+                      "~/Scripts/js/datatables-simple-demo.js",
+                      "~/Scripts/js/datasty.js"));      //Diseño de Plantilla por defecto
 
 
 

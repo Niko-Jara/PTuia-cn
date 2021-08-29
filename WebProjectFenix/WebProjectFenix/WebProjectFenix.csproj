@@ -185,6 +185,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\datasty.js" />
+    <Content Include="Scripts\js\datatables-simple-demo.js" />
     <Content Include="Scripts\js\efect.js" />
     <Content Include="Scripts\js\scripts.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -204,6 +206,17 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layoutlogin.cshtml" />
     <Content Include="Views\Home\Colaborador.cshtml" />
+    <Content Include="Views\Home\EPlanillas.cshtml" />
+    <Content Include="Views\Home\Telefono.cshtml" />
+    <Content Include="Views\Home\Correo.cshtml" />
+    <Content Include="Views\Home\Salario.cshtml" />
+    <Content Include="Views\Home\Vacaciones.cshtml" />
+    <Content Include="Views\Home\Aguinaldo.cshtml" />
+    <Content Include="Views\Home\Preavisos.cshtml" />
+    <Content Include="Views\Home\Cesantias.cshtml" />
+    <Content Include="Views\Home\HorasExtra.cshtml" />
+    <Content Include="Views\Home\Feriados.cshtml" />
+    <Content Include="Views\Home\Usuarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

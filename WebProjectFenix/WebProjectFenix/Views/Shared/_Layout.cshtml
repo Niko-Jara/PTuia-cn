@@ -7,6 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /><!--quitar-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 
     @Styles.Render("~/Content/css")
@@ -41,25 +42,75 @@
                     <div class="nav">
                         <!--FIRST OPTION-->
                         <div class="sb-sidenav-menu-heading">Colaborador</div>
-                        <a class="nav-link"  href="@Url.Action("Colaborador")">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#xsxs" aria-expanded="false" aria-controls="xsxs">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-tie"></i></div>
                             Colaborador
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <div class="collapse" id="xsxs" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="@Url.Action("Colaborador")">Datos Personales</a>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#contact" aria-expanded="false" aria-controls="contact">
+                                    Contacto
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="contact" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("Correo")">Correo</a>
+                                        <a class="nav-link" href="@Url.Action("Telefono")">Teléfono</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link" href="@Url.Action("Salario")">Salario</a>
+                            </nav>
+                        </div>
                         <!--SECOND OPTION-->
                         <div class="sb-sidenav-menu-heading">Gestión de Planillas</div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#plan" aria-expanded="false" aria-controls="plan">
+                            <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
                             Planillas
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="plan" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                <a class="nav-link" href="login.html">Marca</a>
+                                <a class="nav-link" href="register.html">Detalle Marca</a>
+                                <a class="nav-link" href="@Url.Action("EPlanillas")">Planilla</a>
                             </nav>
                         </div>
+
                         <!--THIRD OPTION-->
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#jextra" aria-expanded="false" aria-controls="jextra">
+                            <div class="sb-nav-link-icon"><i class="far fa-calendar-plus"></i></div>
+                            Jornada Extra
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="jextra" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link"  href="@Url.Action("HorasExtra")">Horas Extra</a>
+                                <a class="nav-link"  href="@Url.Action("Feriados")">Feriados</a>
+                            </nav>
+                        </div>
+                        <!--FOURD OPTION-->
+                        <a class="nav-link" href="charts.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-minus"></i></div>
+                            Deducciones
+                        </a>
+                        <!--FIVE OPTION-->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Prest" aria-expanded="false" aria-controls="Prest">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
+                            Prestaciones
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="Prest" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="@Url.Action("Vacaciones")">Vacaciones</a>
+                                <a class="nav-link" href="@Url.Action("Aguinaldo")">Aguinaldos</a>
+                                <a class="nav-link" href="@Url.Action("Preavisos")">Preavisos</a>
+                                <a class="nav-link" href="@Url.Action("Cesantias")">Cesantías</a>
+                            </nav>
+                        </div>
+                        <!--FOURD OPTION-->
+                        @*<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Pages
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -78,17 +129,21 @@
                                     </nav>
                                 </div>
                             </nav>
-                        </div>
-                        <!--FOURTH OPTION-->
+                        </div>*@
+                        <!--SIX OPTION-->
                         <div class="sb-sidenav-menu-heading">Configuración</div>
+                        <a class="nav-link" href="@Url.Action("Usuarios")">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users-cog"></i></div>
+                            Usuarios
+                        </a>
                         <a class="nav-link" href="charts.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
                             Ajustes
                         </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
-                        </a>
+                        @*<a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>*@
                     </div>
                 </div>
             </nav>
@@ -96,7 +151,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                        @RenderBody()
+                    @RenderBody()
                 </div>
             </main>
         </div>
@@ -107,8 +162,9 @@
     @*@Scripts.Render("~/bundles/bootstrap")VERSION REVISAR MISMO CONTENIDO DE BOOSTRAP5*@
     <script src="~/Scripts/js/scripts.js"></script>
     <script src="~/Scripts/js/efect.js"></script>
+    <script src="~/Scripts/js/datatables-simple-demo.js"></script>
+    <script src="~/Scripts/js/datasty.js"></script>
     @RenderSection("scripts", required: false)
-
 </body>
 </html>
 
