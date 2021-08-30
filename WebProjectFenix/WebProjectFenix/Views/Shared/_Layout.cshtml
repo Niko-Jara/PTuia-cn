@@ -72,9 +72,8 @@
                         </a>
                         <div class="collapse" id="plan" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="login.html">Marca</a>
-                                <a class="nav-link" href="register.html">Detalle Marca</a>
-                                <a class="nav-link" href="@Url.Action("EPlanillas")">Planilla</a>
+                                <a class="nav-link" href="@Url.Action("DetMarca")">Marcas</a>
+                                <a class="nav-link" href="@Url.Action("Planilla")">Planilla</a>
                             </nav>
                         </div>
 
@@ -86,15 +85,24 @@
                         </a>
                         <div class="collapse" id="jextra" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link"  href="@Url.Action("HorasExtra")">Horas Extra</a>
-                                <a class="nav-link"  href="@Url.Action("Feriados")">Feriados</a>
+                                <a class="nav-link" href="@Url.Action("HorasExtra")">Horas Extra</a>
+                                <a class="nav-link" href="@Url.Action("Feriados")">Feriados</a>
                             </nav>
                         </div>
                         <!--FOURD OPTION-->
-                        <a class="nav-link" href="charts.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user-minus"></i></div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Deduc" aria-expanded="false" aria-controls="Prest">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                             Deducciones
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <div class="collapse" id="Deduc" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="@Url.Action("Incapacidad")">Incapacidad</a>
+                                <a class="nav-link" href="@Url.Action("Permisos")">Permisos</a>
+                                <a class="nav-link" href="@Url.Action("Ausencia")">Ausencias</a>
+                                <a class="nav-link" href="@Url.Action("Embargos")">Embargos</a>
+                            </nav>
+                        </div>
                         <!--FIVE OPTION-->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Prest" aria-expanded="false" aria-controls="Prest">
                             <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
@@ -111,25 +119,25 @@
                         </div>
                         <!--FOURD OPTION-->
                         @*<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Pages
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Authentication
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
-                                    </nav>
-                                </div>
-                            </nav>
-                        </div>*@
+            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+            Pages
+            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+        </a>
+        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                    Authentication
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="login.html">Login</a>
+                        <a class="nav-link" href="register.html">Register</a>
+                        <a class="nav-link" href="password.html">Forgot Password</a>
+                    </nav>
+                </div>
+            </nav>
+        </div>*@
                         <!--SIX OPTION-->
                         <div class="sb-sidenav-menu-heading">Configuración</div>
                         <a class="nav-link" href="@Url.Action("Usuarios")">
@@ -141,9 +149,9 @@
                             Ajustes
                         </a>
                         @*<a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a>*@
+            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+            Tables
+        </a>*@
                     </div>
                 </div>
             </nav>

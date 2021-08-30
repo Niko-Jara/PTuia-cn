@@ -200,8 +200,10 @@ textarea {
 }
 
 
-#modalcolab, 
-#modalmodcol {
+#modalcolab,
+#modalmodcol,
+#modalplan,
+#modalmodplan {
     max-width: 1250px;
 }
 
@@ -266,7 +268,17 @@ textarea {
 #modalhoraextra,
 #modalmodHoraext,
 #modaluser,
-#modalmoduser{
+#modalmoduser,
+#modaldetmar,
+#modalmoddetmarca,
+#modalincap,
+#modalmodincap,
+#modalperm,
+#modalmodperm,
+#modalausenc,
+#modalmodaus,
+#modalemb,
+#modalmodemb {
     max-width: 750px;
 }
 
@@ -289,7 +301,21 @@ textarea {
 #modalhextra,
 #modalmextra,
 #modalruser,
-#modalmuser {
+#modalmuser,
+#modaldetmarc,
+#modalmdetmarca,
+#modalplanillas,
+#modalmplan,
+#modalinccon,
+#modalmincap,
+#modalperm,
+#modalcopermiso,
+#modalmperm,
+#modalreperm,
+#modalreausen,
+#modalaus,
+#modalcembargo,
+#modalmemb {
     margin-top: 100px;
 }
 
@@ -298,7 +324,6 @@ textarea {
     padding-bottom: 20px;
     margin-left: 25px;
 }
-
 
 .inputr {
     border: none;
@@ -315,6 +340,8 @@ textarea {
 .inputr:focus {
     border-bottom: 2px solid #126b6d;
 }
+
+/*DETALLE DE MARCA*/
 
 
 

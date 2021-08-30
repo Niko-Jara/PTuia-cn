@@ -150,6 +150,8 @@
     <Content Include="img\cs.png" />
     <Content Include="img\delete.png" />
     <Content Include="img\edit.png" />
+    <Content Include="img\export.png" />
+    <Content Include="img\exportx.png" />
     <Content Include="img\LOGOactualizado.png" />
     <Content Include="img\logopeq.png" />
     <Content Include="img\logopeque.png" />
@@ -213,7 +215,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layoutlogin.cshtml" />
@@ -229,6 +230,13 @@
     <Content Include="Views\Home\HorasExtra.cshtml" />
     <Content Include="Views\Home\Feriados.cshtml" />
     <Content Include="Views\Home\Usuarios.cshtml" />
+    <Content Include="Views\Home\Planilla.cshtml" />
+    <Content Include="Views\Home\DetMarca.cshtml" />
+    <Content Include="Views\Home\Deducciones.cshtml" />
+    <Content Include="Views\Home\Incapacidad.cshtml" />
+    <Content Include="Views\Home\Permisos.cshtml" />
+    <Content Include="Views\Home\Ausencia.cshtml" />
+    <Content Include="Views\Home\Embargos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,347 @@
+﻿@{
+    ViewBag.Title = "Planilla";
+}
+
+<style>
+    #Detalleplanilla {
+        display: none;
+    }
+</style>
+<div>
+    <h2 id="titleCol">Registro de Planillas</h2> <!--CAMBIAR-->
+</div>
+<div class="sechead">
+    <button id="btnAddPlan" type="button" class="btn btn-secondary btns" data-bs-toggle="modal" data-bs-target="#RegPlan">Registrar Planilla<img id="imgAddSal" class="imgsadd" src="/img/user.png" /></button>
+</div>
+
+
+<div id="SecPlanilla" class="container sections">
+    <form>
+        <!--DATA TABLE-->
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Información Planillas
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Cédula</th>
+                            <th>Monto</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>Cédula</th>
+                            <th>Monto</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>
+                                <a style="padding-left:30px" href="@Url.Action("Login")" data-bs-toggle="modal" data-bs-target="#ModModalPlanilla"><img width="20" height="20" src="/img/edit.png" /></a>
+                                <a href="@Url.Action("ModModalPlanilla")"><img width="20" height="20" src="/img/delete.png" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>
+                                <a style="padding-left:30px" href="@Url.Action("Login")"><img width="20" height="20" src="/img/edit.png" /></a>
+                                <a onclick="elim()"><img width="20" height="20" src="/img/delete.png" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>
+                                <a style="padding-left:30px" href="@Url.Action("Login")"><img width="20" height="20" src="/img/edit.png" /></a>
+                                <a href="@Url.Action("Login")"><img width="20" height="20" src="/img/delete.png" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                        </tr>
+                        <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                        </tr>
+                        <tr>
+                            <td>Charde Marshall</td>
+                            <td>Regional Director</td>
+                            <td>San Francisco</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>Haley Kennedy</td>
+                            <td>Senior Marketing Designer</td>
+                            <td>London</td>
+                            <td>43</td>
+                        </tr>
+                        <tr>
+                            <td>Fiona Green</td>
+                            <td>Chief Operating Officer (COO)</td>
+                            <td>San Francisco</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>Zenaida Frank</td>
+                            <td>Software Engineer</td>
+                            <td>New York</td>
+                            <td>63</td>
+                        </tr>
+                        <tr>
+                            <td>Zorita Serrano</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>56</td>
+                        </tr>
+                        <tr>
+                            <td>Hermione Butler</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>47</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Bruce</td>
+                            <td>Javascript Developer</td>
+                            <td>Singapore</td>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Snider</td>
+                            <td>Customer Support</td>
+                            <td>New York</td>
+                            <td>27</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--MODAL REGISTRAR ENCABEZADO PLANILLAS-->
+        <div class="modal" id="RegPlan" tabindex="-1" aria-labelledby="ModalRegPlan" aria-hidden="true">
+            <div id="modalplan" class="modal-dialog modal-xl">
+                <div id="modalplanillas" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalRegPlan">Registrar Planilla<img id="imgdsal" class="imgsadd" src="/img/adduser.png" /></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="bodymodalplan" class="mbody">
+                            <div id="Seccionencabezado">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <h4>Encabezado de Planilla</h4>
+                                    </div>
+                                </div>
+                                <!--FIRST ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Código de Planilla" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SECOND ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Cédula de Colaborador" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Año" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Semana" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--THIRD ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" placeholder="Fecha Inicio"
+                                                   onfocus="(this.type='date')">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" placeholder="Fecha Fin"
+                                                   onfocus="(this.type='date')">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" placeholder="Fecha Cierre"
+                                                   onfocus="(this.type='date')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--FOURD ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <select class="inputr" name="Estado">
+                                                <option value="value0">Activo</option>
+                                                <option value="value1">Desactivado</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--FIVE ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-xl-7">
+                                            <button style="float:right; margin-top:25px" id="btnColabLimpiar" class="btn btn-primary" type="button" onclick="mostrarSec2()">
+                                                Guardar Encabezado
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--DISPLAY NONE DETALLE PLANILLA-->
+                            <div id="Detalleplanilla">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <h4>Detalle de Planilla</h4>
+                                    </div>
+                                </div>
+                                <!--FIRST ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Código de Planilla" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SECOND ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Cédula de Colaborador" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Salario Neto" />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input class="inputr" type="text" name="cedula" placeholder="Rubro" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--THIRD ROW-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-xl-7">
+                                            <button style="float:right; margin-top:25px" id="btnColabLimpiar" class="btn btn-primary" type="button" onclick="mostrarSec2()">
+                                                Guardar Detalle
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button style="margin-top:10px" id="btnColabLimpiar" class="btn btn-primary" type="button">
+                            Cancelar
+                        </button>
+                        <button style="margin-top:10px" id="btnColabGuardar" class="btn btn-primary" type="button">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--MODAL MODIFICAR PLANILLAS--> <!--revisar mismo id exampleModalLabel-->
+        <div class="modal" id="ModModalPlanilla" tabindex="-1" aria-labelledby="Modalmodplan" aria-hidden="true">
+            <div id="modalmodplan" class="modal-dialog modal-xl">
+                <div id="modalmplan" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="Modalmodplan">Modificar Planilla<img id="imgmodsal" class="imgsadd" src="/img/adduser.png" /></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="bodymodalmsal" class="mbody">
+                            <!--FIRST ROW-->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="cedula" placeholder="Cédula" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--SECOND ROW-->
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input class="inputr" type="text" name="nombre" placeholder="Monto" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="inputr" name="Estado">
+                                            <option value="value0">Activo</option>
+                                            <option value="value1">Desactivado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>       
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button style="margin-top:10px" id="btnColabLimpiar" class="btn btn-primary" type="button">
+                            Cancelar
+                        </button>
+                        <button style="margin-top:10px" id="btnColabGuardar" class="btn btn-primary" type="button">
+                            Modificar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    var msg = "Esta seguro que desea eliminar los datos"
+
+    function elim() {
+        alert(msg);
+    }
+
+    function mostrarSec2() {
+        document.getElementById('Detalleplanilla').style.display = 'block';
+        document.getElementById('Seccionencabezado').style.display = 'none'; /*Se puede dejar o quitar*/
+    }
+</script>
+
+
+
