@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebProjectFenix", "WebProje
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BD", "BD", "{758EAB2F-4A31-4940-8E9B-C46FA163B9C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scriptbd", "Scriptbd", "{31C4761C-A07A-49A0-9B25-1864A2FC554E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Desktop\SQLQueryBDProject.sql = ..\..\..\..\..\Desktop\SQLQueryBDProject.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31C4761C-A07A-49A0-9B25-1864A2FC554E} = {758EAB2F-4A31-4940-8E9B-C46FA163B9C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9ADE91B2-3624-47BA-9099-B041E04C058B}

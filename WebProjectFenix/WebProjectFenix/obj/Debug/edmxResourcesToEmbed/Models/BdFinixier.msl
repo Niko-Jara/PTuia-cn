@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_a78cef_finixierModelStoreContainer" CdmEntityContainer="db_a78cef_finixier">
+    <EntitySetMapping Name="Adelantoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Adelanto">
+        <MappingFragment StoreEntitySet="Adelanto">
+          <ScalarProperty Name="idAdelanto" ColumnName="idAdelanto" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="PorcRebajo" ColumnName="PorcRebajo" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aguinaldoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Aguinaldo">
+        <MappingFragment StoreEntitySet="Aguinaldo">
+          <ScalarProperty Name="idAguinaldo" ColumnName="idAguinaldo" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ausencias">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Ausencia">
+        <MappingFragment StoreEntitySet="Ausencias">
+          <ScalarProperty Name="idAusencia" ColumnName="idAusencia" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="TotalDias" ColumnName="TotalDias" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cesantias">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Cesantia">
+        <MappingFragment StoreEntitySet="Cesantia">
+          <ScalarProperty Name="idCesantia" ColumnName="idCesantia" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Meses" ColumnName="Meses" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colaboradors">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Colaborador">
+        <MappingFragment StoreEntitySet="Colaborador">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="idEstadoCivil" ColumnName="idEstadoCivil" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="idJornada" ColumnName="idJornada" />
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="NivelEscolaridad" ColumnName="NivelEscolaridad" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Correos">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Correo">
+        <MappingFragment StoreEntitySet="Correo">
+          <ScalarProperty Name="idCorreo" ColumnName="idCorreo" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Correo1" ColumnName="Correo" />
+          <ScalarProperty Name="idTipoCorreo" ColumnName="idTipoCorreo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="Departamento1" ColumnName="Departamento" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleMarcas">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.DetalleMarca">
+        <MappingFragment StoreEntitySet="DetalleMarca">
+          <ScalarProperty Name="idDetMarca" ColumnName="idDetMarca" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="CantHoras" ColumnName="CantHoras" />
+          <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetallePlanillas">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.DetallePlanilla">
+        <MappingFragment StoreEntitySet="DetallePlanilla">
+          <ScalarProperty Name="idDetallePlanilla" ColumnName="idDetallePlanilla" />
+          <ScalarProperty Name="CodPlanilla" ColumnName="CodPlanilla" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="IdSalario" ColumnName="IdSalario" />
+          <ScalarProperty Name="SalarioNeto" ColumnName="SalarioNeto" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="SalarioBruto" ColumnName="SalarioBruto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Embargos">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Embargo">
+        <MappingFragment StoreEntitySet="Embargos">
+          <ScalarProperty Name="idEmbargo" ColumnName="idEmbargo" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="PorcRebajo" ColumnName="PorcRebajo" />
+          <ScalarProperty Name="MontoEmbargo" ColumnName="MontoEmbargo" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoCivils">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.EstadoCivil">
+        <MappingFragment StoreEntitySet="EstadoCivil">
+          <ScalarProperty Name="idEstadoCivil" ColumnName="idEstadoCivil" />
+          <ScalarProperty Name="EstadoCivil1" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoPlanillas">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.EstadoPlanilla">
+        <MappingFragment StoreEntitySet="EstadoPlanilla">
+          <ScalarProperty Name="idEstadoPlanilla" ColumnName="idEstadoPlanilla" />
+          <ScalarProperty Name="EstadoPlanilla1" ColumnName="EstadoPlanilla" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feriadoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Feriado">
+        <MappingFragment StoreEntitySet="Feriado">
+          <ScalarProperty Name="idFeriado" ColumnName="idFeriado" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="idTipoPagoFeriado" ColumnName="idTipoPagoFeriado" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Generoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Genero">
+        <MappingFragment StoreEntitySet="Genero">
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="TipoGenero" ColumnName="TipoGenero" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HorasExtras">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.HorasExtra">
+        <MappingFragment StoreEntitySet="HorasExtra">
+          <ScalarProperty Name="idHorasextra" ColumnName="idHorasextra" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+          <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="idTipoHoraExtra" ColumnName="idTipoHoraExtra" />
+          <ScalarProperty Name="TotalHoras" ColumnName="TotalHoras" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImpuestoRentas">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.ImpuestoRenta">
+        <MappingFragment StoreEntitySet="ImpuestoRenta">
+          <ScalarProperty Name="idImpuestoRenta" ColumnName="idImpuestoRenta" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="idRangoImpuesto" ColumnName="idRangoImpuesto" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incapacidads">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Incapacidad">
+        <MappingFragment StoreEntitySet="Incapacidad">
+          <ScalarProperty Name="idIncapacidad" ColumnName="idIncapacidad" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="TotalDias" ColumnName="TotalDias" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jornadas">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Jornada">
+        <MappingFragment StoreEntitySet="Jornada">
+          <ScalarProperty Name="idJornada" ColumnName="idJornada" />
+          <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+          <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LlegadaTardias">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.LlegadaTardia">
+        <MappingFragment StoreEntitySet="LlegadaTardias">
+          <ScalarProperty Name="idLlegadasTardia" ColumnName="idLlegadasTardia" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Horallegada" ColumnName="Horallegada" />
+          <ScalarProperty Name="TotalTiempo" ColumnName="TotalTiempo" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marcas">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Marca">
+        <MappingFragment StoreEntitySet="Marca">
+          <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="NumMarca" ColumnName="NumMarca" />
+          <ScalarProperty Name="Machn" ColumnName="Machn" />
+          <ScalarProperty Name="Codhuella" ColumnName="Codhuella" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="IOMd" ColumnName="IOMd" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Permiso">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="idPermisos" ColumnName="idPermisos" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+          <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+          <ScalarProperty Name="Totaltiempo" ColumnName="Totaltiempo" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planillas">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Planilla">
+        <MappingFragment StoreEntitySet="Planilla">
+          <ScalarProperty Name="CodPlanilla" ColumnName="CodPlanilla" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Anno" ColumnName="Anno" />
+          <ScalarProperty Name="Semana" ColumnName="Semana" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+          <ScalarProperty Name="idEstadoPlanilla" ColumnName="idEstadoPlanilla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preavisoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Preaviso">
+        <MappingFragment StoreEntitySet="Preaviso">
+          <ScalarProperty Name="idPreaviso" ColumnName="idPreaviso" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="TotalDias" ColumnName="TotalDias" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puestoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Puesto">
+        <MappingFragment StoreEntitySet="Puesto">
+          <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
+          <ScalarProperty Name="Puesto1" ColumnName="Puesto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RangoImpuestoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.RangoImpuesto">
+        <MappingFragment StoreEntitySet="RangoImpuesto">
+          <ScalarProperty Name="idRangoImpuesto" ColumnName="idRangoImpuesto" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rols">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="Rol1" ColumnName="Rol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rubroes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Rubro">
+        <MappingFragment StoreEntitySet="Rubro">
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RubrosDeduccions">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.RubrosDeduccion">
+        <MappingFragment StoreEntitySet="RubrosDeduccion">
+          <ScalarProperty Name="idRubroDeduccion" ColumnName="idRubroDeduccion" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+          <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salarios">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Salario">
+        <MappingFragment StoreEntitySet="Salario">
+          <ScalarProperty Name="idSalario" ColumnName="idSalario" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Telefonoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Telefono">
+        <MappingFragment StoreEntitySet="Telefono">
+          <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Telefono1" ColumnName="Telefono" />
+          <ScalarProperty Name="idTipoTelefono" ColumnName="idTipoTelefono" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoCorreos">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoCorreo">
+        <MappingFragment StoreEntitySet="TipoCorreo">
+          <ScalarProperty Name="idTipoCorreo" ColumnName="idTipoCorreo" />
+          <ScalarProperty Name="TipoCorreo1" ColumnName="TipoCorreo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoHoraExtras">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoHoraExtra">
+        <MappingFragment StoreEntitySet="TipoHoraExtra">
+          <ScalarProperty Name="idTipoHoraExtra" ColumnName="idTipoHoraExtra" />
+          <ScalarProperty Name="TipoHoraExtra1" ColumnName="TipoHoraExtra" />
+          <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPagoFeriadoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoPagoFeriado">
+        <MappingFragment StoreEntitySet="TipoPagoFeriado">
+          <ScalarProperty Name="idTipoPagoFeriado" ColumnName="idTipoPagoFeriado" />
+          <ScalarProperty Name="TipoPagoFeriado1" ColumnName="TipoPagoFeriado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoTelefonoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoTelefono">
+        <MappingFragment StoreEntitySet="TipoTelefono">
+          <ScalarProperty Name="idTipoTelefono" ColumnName="idTipoTelefono" />
+          <ScalarProperty Name="TipoTelefono1" ColumnName="TipoTelefono" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turnoes">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Turno">
+        <MappingFragment StoreEntitySet="Turno">
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+          <ScalarProperty Name="Turno1" ColumnName="Turno" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacaciones">
+      <EntityTypeMapping TypeName="db_a78cef_finixierModel.Vacacione">
+        <MappingFragment StoreEntitySet="Vacaciones">
+          <ScalarProperty Name="idVacaciones" ColumnName="idVacaciones" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DepartamentoXPuesto" TypeName="db_a78cef_finixierModel.DepartamentoXPuesto" StoreEntitySet="DepartamentoXPuesto">
+      <EndProperty Name="Departamento">
+        <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+      </EndProperty>
+      <EndProperty Name="Puesto">
+        <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

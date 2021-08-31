@@ -1,0 +1,3082 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_a78cef_finixierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adelanto">
+          <Key>
+            <PropertyRef Name="idAdelanto" />
+          </Key>
+          <Property Name="idAdelanto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="FechaEntrega" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="PorcRebajo" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Aguinaldo">
+          <Key>
+            <PropertyRef Name="idAguinaldo" />
+          </Key>
+          <Property Name="idAguinaldo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ausencias">
+          <Key>
+            <PropertyRef Name="idAusencia" />
+          </Key>
+          <Property Name="idAusencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalDias" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cesantia">
+          <Key>
+            <PropertyRef Name="idCesantia" />
+          </Key>
+          <Property Name="idCesantia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="FechaEmision" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Meses" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colaborador">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="PrimerApellido" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="SegundoApellido" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="idGenero" Type="int" Nullable="false" />
+          <Property Name="idEstadoCivil" Type="int" Nullable="false" />
+          <Property Name="FechaIngreso" Type="date" Nullable="false" />
+          <Property Name="idJornada" Type="int" Nullable="false" />
+          <Property Name="idDepartamento" Type="int" Nullable="false" />
+          <Property Name="NivelEscolaridad" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Correo">
+          <Key>
+            <PropertyRef Name="idCorreo" />
+          </Key>
+          <Property Name="idCorreo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="idTipoCorreo" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Departamento" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DepartamentoXPuesto">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+            <PropertyRef Name="idPuesto" />
+          </Key>
+          <Property Name="idDepartamento" Type="int" Nullable="false" />
+          <Property Name="idPuesto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleMarca">
+          <Key>
+            <PropertyRef Name="idDetMarca" />
+          </Key>
+          <Property Name="idDetMarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="UsuarioReg" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="FechaRegistro" Type="date" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="CantHoras" Type="int" Nullable="false" />
+          <Property Name="IdMarca" Type="int" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetallePlanilla">
+          <Key>
+            <PropertyRef Name="idDetallePlanilla" />
+          </Key>
+          <Property Name="idDetallePlanilla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodPlanilla" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="IdSalario" Type="int" Nullable="false" />
+          <Property Name="SalarioNeto" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="SalarioBruto" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Embargos">
+          <Key>
+            <PropertyRef Name="idEmbargo" />
+          </Key>
+          <Property Name="idEmbargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+          <Property Name="PorcRebajo" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="MontoEmbargo" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="idEstadoCivil" />
+          </Key>
+          <Property Name="idEstadoCivil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstadoCivil" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoPlanilla">
+          <Key>
+            <PropertyRef Name="idEstadoPlanilla" />
+          </Key>
+          <Property Name="idEstadoPlanilla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EstadoPlanilla" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Feriado">
+          <Key>
+            <PropertyRef Name="idFeriado" />
+          </Key>
+          <Property Name="idFeriado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="idTipoPagoFeriado" Type="int" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genero">
+          <Key>
+            <PropertyRef Name="idGenero" />
+          </Key>
+          <Property Name="idGenero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoGenero" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HorasExtra">
+          <Key>
+            <PropertyRef Name="idHorasextra" />
+          </Key>
+          <Property Name="idHorasextra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="HoraInicio" Type="time" Precision="7" Nullable="false" />
+          <Property Name="HoraFin" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="idTipoHoraExtra" Type="int" Nullable="false" />
+          <Property Name="TotalHoras" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImpuestoRenta">
+          <Key>
+            <PropertyRef Name="idImpuestoRenta" />
+          </Key>
+          <Property Name="idImpuestoRenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRangoImpuesto" Type="int" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Incapacidad">
+          <Key>
+            <PropertyRef Name="idIncapacidad" />
+          </Key>
+          <Property Name="idIncapacidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="TotalDias" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Jornada">
+          <Key>
+            <PropertyRef Name="idJornada" />
+          </Key>
+          <Property Name="idJornada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoraInicio" Type="time" Precision="7" Nullable="false" />
+          <Property Name="HoraFin" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+          <Property Name="idTurno" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LlegadaTardias">
+          <Key>
+            <PropertyRef Name="idLlegadasTardia" />
+          </Key>
+          <Property Name="idLlegadasTardia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Horallegada" Type="time" Precision="7" Nullable="false" />
+          <Property Name="TotalTiempo" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="IdMarca" />
+          </Key>
+          <Property Name="IdMarca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="NumMarca" Type="int" Nullable="false" />
+          <Property Name="Machn" Type="int" Nullable="false" />
+          <Property Name="Codhuella" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Mode" Type="int" Nullable="false" />
+          <Property Name="IOMd" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="idPermisos" />
+          </Key>
+          <Property Name="idPermisos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="HoraInicio" Type="time" Precision="7" Nullable="false" />
+          <Property Name="HoraFin" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Totaltiempo" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Planilla">
+          <Key>
+            <PropertyRef Name="CodPlanilla" />
+          </Key>
+          <Property Name="CodPlanilla" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Anno" Type="int" Nullable="false" />
+          <Property Name="Semana" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="FechaCierre" Type="date" Nullable="false" />
+          <Property Name="idEstadoPlanilla" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Preaviso">
+          <Key>
+            <PropertyRef Name="idPreaviso" />
+          </Key>
+          <Property Name="idPreaviso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="TotalDias" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Puesto">
+          <Key>
+            <PropertyRef Name="idPuesto" />
+          </Key>
+          <Property Name="idPuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Puesto" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RangoImpuesto">
+          <Key>
+            <PropertyRef Name="idRangoImpuesto" />
+          </Key>
+          <Property Name="idRangoImpuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Porcentaje" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rol" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rubro">
+          <Key>
+            <PropertyRef Name="idRubro" />
+          </Key>
+          <Property Name="idRubro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RubrosDeduccion">
+          <Key>
+            <PropertyRef Name="idRubroDeduccion" />
+          </Key>
+          <Property Name="idRubroDeduccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="35" />
+          <Property Name="Porcentaje" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Salario">
+          <Key>
+            <PropertyRef Name="idSalario" />
+          </Key>
+          <Property Name="idSalario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Monto" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="idTelefono" />
+          </Key>
+          <Property Name="idTelefono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Telefono" Type="int" Nullable="false" />
+          <Property Name="idTipoTelefono" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoCorreo">
+          <Key>
+            <PropertyRef Name="idTipoCorreo" />
+          </Key>
+          <Property Name="idTipoCorreo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoCorreo" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoHoraExtra">
+          <Key>
+            <PropertyRef Name="idTipoHoraExtra" />
+          </Key>
+          <Property Name="idTipoHoraExtra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoHoraExtra" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Porcentaje" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoPagoFeriado">
+          <Key>
+            <PropertyRef Name="idTipoPagoFeriado" />
+          </Key>
+          <Property Name="idTipoPagoFeriado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoPagoFeriado" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoTelefono">
+          <Key>
+            <PropertyRef Name="idTipoTelefono" />
+          </Key>
+          <Property Name="idTipoTelefono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipoTelefono" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="idTurno" />
+          </Key>
+          <Property Name="idTurno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Turno" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="Usuario" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="idRol" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vacaciones">
+          <Key>
+            <PropertyRef Name="idVacaciones" />
+          </Key>
+          <Property Name="idVacaciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="int" Nullable="false" />
+          <Property Name="FechaInicio" Type="date" Nullable="false" />
+          <Property Name="FechaFin" Type="date" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cesantias">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Cesantia" Type="Self.Cesantia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Cesantia">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabAguinaldo">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Aguinaldo" Type="Self.Aguinaldo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Aguinaldo">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabCorreo">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Correo" Type="Self.Correo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Correo">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabMarca">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Marca" Type="Self.Marca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Marca">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colaborador">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabPreaviso">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Preaviso" Type="Self.Preaviso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Preaviso">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colabsal">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Salario" Type="Self.Salario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Salario">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colabtelef">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxAdel">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Adelanto" Type="Self.Adelanto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Adelanto">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxAusenc">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Ausencias" Type="Self.Ausencias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Ausencias">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxDedFijas">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="RubrosDeduccion" Type="Self.RubrosDeduccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="RubrosDeduccion">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxEmb">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Embargos" Type="Self.Embargos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Embargos">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colabxfer">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Feriado" Type="Self.Feriado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Feriado">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabXImpR">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="ImpuestoRenta">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxLleg">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="LlegadaTardias" Type="Self.LlegadaTardias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="LlegadaTardias">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxMarca">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="DetalleMarca" Type="Self.DetalleMarca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="DetalleMarca">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxPer">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxPlan">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxPlanilla">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Planilla" Type="Self.Planilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Planilla">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxTHExtra">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="HorasExtra" Type="Self.HorasExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="HorasExtra">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepxPuesto">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="DepartamentoXPuesto" Type="Self.DepartamentoXPuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="DepartamentoXPuesto">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetxMarca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="DetalleMarca" Type="Self.DetalleMarca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="IdMarca" />
+            </Principal>
+            <Dependent Role="DetalleMarca">
+              <PropertyRef Name="IdMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoCivil">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="idEstadoCivil" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idEstadoCivil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoPlanilla">
+          <End Role="EstadoPlanilla" Type="Self.EstadoPlanilla" Multiplicity="1" />
+          <End Role="Planilla" Type="Self.Planilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoPlanilla">
+              <PropertyRef Name="idEstadoPlanilla" />
+            </Principal>
+            <Dependent Role="Planilla">
+              <PropertyRef Name="idEstadoPlanilla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Genero">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="idGenero" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idGenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incapxcolab">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Incapacidad" Type="Self.Incapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Incapacidad">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Jornada">
+          <End Role="Jornada" Type="Self.Jornada" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jornada">
+              <PropertyRef Name="idJornada" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idJornada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JornadaTurno">
+          <End Role="Turno" Type="Self.Turno" Multiplicity="1" />
+          <End Role="Jornada" Type="Self.Jornada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turno">
+              <PropertyRef Name="idTurno" />
+            </Principal>
+            <Dependent Role="Jornada">
+              <PropertyRef Name="idTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlanxDet">
+          <End Role="Planilla" Type="Self.Planilla" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planilla">
+              <PropertyRef Name="CodPlanilla" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="CodPlanilla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlanxSal">
+          <End Role="Salario" Type="Self.Salario" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salario">
+              <PropertyRef Name="idSalario" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="IdSalario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuestoxDep">
+          <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
+          <End Role="DepartamentoXPuesto" Type="Self.DepartamentoXPuesto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puesto">
+              <PropertyRef Name="idPuesto" />
+            </Principal>
+            <Dependent Role="DepartamentoXPuesto">
+              <PropertyRef Name="idPuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RangoImpuesto">
+          <End Role="RangoImpuesto" Type="Self.RangoImpuesto" Multiplicity="1" />
+          <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RangoImpuesto">
+              <PropertyRef Name="idRangoImpuesto" />
+            </Principal>
+            <Dependent Role="ImpuestoRenta">
+              <PropertyRef Name="idRangoImpuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubAus">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Ausencias" Type="Self.Ausencias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Ausencias">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubInc">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Incapacidad" Type="Self.Incapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Incapacidad">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubLleg">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="LlegadaTardias" Type="Self.LlegadaTardias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="LlegadaTardias">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubPer">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubroxPlan">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxAdel">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Adelanto" Type="Self.Adelanto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Adelanto">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxDedFijas">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="RubrosDeduccion" Type="Self.RubrosDeduccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="RubrosDeduccion">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxDetMarca">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="DetalleMarca" Type="Self.DetalleMarca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="DetalleMarca">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxEmb">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Embargos" Type="Self.Embargos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Embargos">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxFer">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Feriado" Type="Self.Feriado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Feriado">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxHExtra">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="HorasExtra" Type="Self.HorasExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="HorasExtra">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubXIRenta">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="ImpuestoRenta">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THoraExtra">
+          <End Role="TipoHoraExtra" Type="Self.TipoHoraExtra" Multiplicity="1" />
+          <End Role="HorasExtra" Type="Self.HorasExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoHoraExtra">
+              <PropertyRef Name="idTipoHoraExtra" />
+            </Principal>
+            <Dependent Role="HorasExtra">
+              <PropertyRef Name="idTipoHoraExtra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoCorreo">
+          <End Role="TipoCorreo" Type="Self.TipoCorreo" Multiplicity="1" />
+          <End Role="Correo" Type="Self.Correo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCorreo">
+              <PropertyRef Name="idTipoCorreo" />
+            </Principal>
+            <Dependent Role="Correo">
+              <PropertyRef Name="idTipoCorreo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoPagoFeriado">
+          <End Role="TipoPagoFeriado" Type="Self.TipoPagoFeriado" Multiplicity="1" />
+          <End Role="Feriado" Type="Self.Feriado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPagoFeriado">
+              <PropertyRef Name="idTipoPagoFeriado" />
+            </Principal>
+            <Dependent Role="Feriado">
+              <PropertyRef Name="idTipoPagoFeriado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoTelef">
+          <End Role="TipoTelefono" Type="Self.TipoTelefono" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTelefono">
+              <PropertyRef Name="idTipoTelefono" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="idTipoTelefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacaciones">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Vacaciones" Type="Self.Vacaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Vacaciones">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_a78cef_finixierModelStoreContainer">
+          <EntitySet Name="Adelanto" EntityType="Self.Adelanto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Aguinaldo" EntityType="Self.Aguinaldo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ausencias" EntityType="Self.Ausencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cesantia" EntityType="Self.Cesantia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colaborador" EntityType="Self.Colaborador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Correo" EntityType="Self.Correo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DepartamentoXPuesto" EntityType="Self.DepartamentoXPuesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleMarca" EntityType="Self.DetalleMarca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetallePlanilla" EntityType="Self.DetallePlanilla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Embargos" EntityType="Self.Embargos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoPlanilla" EntityType="Self.EstadoPlanilla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feriado" EntityType="Self.Feriado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genero" EntityType="Self.Genero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HorasExtra" EntityType="Self.HorasExtra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImpuestoRenta" EntityType="Self.ImpuestoRenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Incapacidad" EntityType="Self.Incapacidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jornada" EntityType="Self.Jornada" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LlegadaTardias" EntityType="Self.LlegadaTardias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Planilla" EntityType="Self.Planilla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Preaviso" EntityType="Self.Preaviso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RangoImpuesto" EntityType="Self.RangoImpuesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rubro" EntityType="Self.Rubro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RubrosDeduccion" EntityType="Self.RubrosDeduccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salario" EntityType="Self.Salario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Telefono" EntityType="Self.Telefono" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoCorreo" EntityType="Self.TipoCorreo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoHoraExtra" EntityType="Self.TipoHoraExtra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoPagoFeriado" EntityType="Self.TipoPagoFeriado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoTelefono" EntityType="Self.TipoTelefono" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Turno" EntityType="Self.Turno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cesantias" Association="Self.FK_Cesantias">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Cesantia" EntitySet="Cesantia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabAguinaldo" Association="Self.FK_ColabAguinaldo">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Aguinaldo" EntitySet="Aguinaldo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabCorreo" Association="Self.FK_ColabCorreo">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Correo" EntitySet="Correo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabMarca" Association="Self.FK_ColabMarca">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Marca" EntitySet="Marca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colaborador" Association="Self.FK_Colaborador">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabPreaviso" Association="Self.FK_ColabPreaviso">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Preaviso" EntitySet="Preaviso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colabsal" Association="Self.FK_Colabsal">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Salario" EntitySet="Salario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colabtelef" Association="Self.FK_Colabtelef">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxAdel" Association="Self.FK_ColabxAdel">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Adelanto" EntitySet="Adelanto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxAusenc" Association="Self.FK_ColabxAusenc">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Ausencias" EntitySet="Ausencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxDedFijas" Association="Self.FK_ColabxDedFijas">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="RubrosDeduccion" EntitySet="RubrosDeduccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxEmb" Association="Self.FK_ColabxEmb">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Embargos" EntitySet="Embargos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colabxfer" Association="Self.FK_Colabxfer">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Feriado" EntitySet="Feriado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabXImpR" Association="Self.FK_ColabXImpR">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="ImpuestoRenta" EntitySet="ImpuestoRenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxLleg" Association="Self.FK_ColabxLleg">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="LlegadaTardias" EntitySet="LlegadaTardias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxMarca" Association="Self.FK_ColabxMarca">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="DetalleMarca" EntitySet="DetalleMarca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxPer" Association="Self.FK_ColabxPer">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxPlan" Association="Self.FK_ColabxPlan">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanilla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxPlanilla" Association="Self.FK_ColabxPlanilla">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Planilla" EntitySet="Planilla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxTHExtra" Association="Self.FK_ColabxTHExtra">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="HorasExtra" EntitySet="HorasExtra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departamento" Association="Self.FK_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Colaborador" EntitySet="Colaborador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepxPuesto" Association="Self.FK_DepxPuesto">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="DepartamentoXPuesto" EntitySet="DepartamentoXPuesto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetxMarca" Association="Self.FK_DetxMarca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="DetalleMarca" EntitySet="DetalleMarca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoCivil" Association="Self.FK_EstadoCivil">
+            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+            <End Role="Colaborador" EntitySet="Colaborador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoPlanilla" Association="Self.FK_EstadoPlanilla">
+            <End Role="EstadoPlanilla" EntitySet="EstadoPlanilla" />
+            <End Role="Planilla" EntitySet="Planilla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Genero" Association="Self.FK_Genero">
+            <End Role="Genero" EntitySet="Genero" />
+            <End Role="Colaborador" EntitySet="Colaborador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incapxcolab" Association="Self.FK_Incapxcolab">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Incapacidad" EntitySet="Incapacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jornada" Association="Self.FK_Jornada">
+            <End Role="Jornada" EntitySet="Jornada" />
+            <End Role="Colaborador" EntitySet="Colaborador" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JornadaTurno" Association="Self.FK_JornadaTurno">
+            <End Role="Turno" EntitySet="Turno" />
+            <End Role="Jornada" EntitySet="Jornada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlanxDet" Association="Self.FK_PlanxDet">
+            <End Role="Planilla" EntitySet="Planilla" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanilla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlanxSal" Association="Self.FK_PlanxSal">
+            <End Role="Salario" EntitySet="Salario" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanilla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuestoxDep" Association="Self.FK_PuestoxDep">
+            <End Role="Puesto" EntitySet="Puesto" />
+            <End Role="DepartamentoXPuesto" EntitySet="DepartamentoXPuesto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RangoImpuesto" Association="Self.FK_RangoImpuesto">
+            <End Role="RangoImpuesto" EntitySet="RangoImpuesto" />
+            <End Role="ImpuestoRenta" EntitySet="ImpuestoRenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rol" Association="Self.FK_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubAus" Association="Self.FK_RubAus">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Ausencias" EntitySet="Ausencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubInc" Association="Self.FK_RubInc">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Incapacidad" EntitySet="Incapacidad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubLleg" Association="Self.FK_RubLleg">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="LlegadaTardias" EntitySet="LlegadaTardias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubPer" Association="Self.FK_RubPer">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubroxPlan" Association="Self.FK_RubroxPlan">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanilla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxAdel" Association="Self.FK_RubxAdel">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Adelanto" EntitySet="Adelanto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxDedFijas" Association="Self.FK_RubxDedFijas">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="RubrosDeduccion" EntitySet="RubrosDeduccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxDetMarca" Association="Self.FK_RubxDetMarca">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="DetalleMarca" EntitySet="DetalleMarca" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxEmb" Association="Self.FK_RubxEmb">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Embargos" EntitySet="Embargos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxFer" Association="Self.FK_RubxFer">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="Feriado" EntitySet="Feriado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxHExtra" Association="Self.FK_RubxHExtra">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="HorasExtra" EntitySet="HorasExtra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubXIRenta" Association="Self.FK_RubXIRenta">
+            <End Role="Rubro" EntitySet="Rubro" />
+            <End Role="ImpuestoRenta" EntitySet="ImpuestoRenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THoraExtra" Association="Self.FK_THoraExtra">
+            <End Role="TipoHoraExtra" EntitySet="TipoHoraExtra" />
+            <End Role="HorasExtra" EntitySet="HorasExtra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoCorreo" Association="Self.FK_TipoCorreo">
+            <End Role="TipoCorreo" EntitySet="TipoCorreo" />
+            <End Role="Correo" EntitySet="Correo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoPagoFeriado" Association="Self.FK_TipoPagoFeriado">
+            <End Role="TipoPagoFeriado" EntitySet="TipoPagoFeriado" />
+            <End Role="Feriado" EntitySet="Feriado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoTelef" Association="Self.FK_TipoTelef">
+            <End Role="TipoTelefono" EntitySet="TipoTelefono" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacaciones" Association="Self.FK_Vacaciones">
+            <End Role="Colaborador" EntitySet="Colaborador" />
+            <End Role="Vacaciones" EntitySet="Vacaciones" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_a78cef_finixierModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adelanto">
+          <Key>
+            <PropertyRef Name="idAdelanto" />
+          </Key>
+          <Property Name="idAdelanto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="FechaEntrega" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PorcRebajo" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxAdel" FromRole="Adelanto" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubxAdel" FromRole="Adelanto" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Aguinaldo">
+          <Key>
+            <PropertyRef Name="idAguinaldo" />
+          </Key>
+          <Property Name="idAguinaldo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Monto" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabAguinaldo" FromRole="Aguinaldo" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="Ausencia">
+          <Key>
+            <PropertyRef Name="idAusencia" />
+          </Key>
+          <Property Name="idAusencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TotalDias" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxAusenc" FromRole="Ausencias" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubAus" FromRole="Ausencias" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Cesantia">
+          <Key>
+            <PropertyRef Name="idCesantia" />
+          </Key>
+          <Property Name="idCesantia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Meses" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Cesantias" FromRole="Cesantia" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="Colaborador">
+          <Key>
+            <PropertyRef Name="Cedula" />
+          </Key>
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimerApellido" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SegundoApellido" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idGenero" Type="Int32" Nullable="false" />
+          <Property Name="idEstadoCivil" Type="Int32" Nullable="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idJornada" Type="Int32" Nullable="false" />
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+          <Property Name="NivelEscolaridad" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Adelantoes" Relationship="Self.FK_ColabxAdel" FromRole="Colaborador" ToRole="Adelanto" />
+          <NavigationProperty Name="Aguinaldoes" Relationship="Self.FK_ColabAguinaldo" FromRole="Colaborador" ToRole="Aguinaldo" />
+          <NavigationProperty Name="Ausencias" Relationship="Self.FK_ColabxAusenc" FromRole="Colaborador" ToRole="Ausencias" />
+          <NavigationProperty Name="Cesantias" Relationship="Self.FK_Cesantias" FromRole="Colaborador" ToRole="Cesantia" />
+          <NavigationProperty Name="Correos" Relationship="Self.FK_ColabCorreo" FromRole="Colaborador" ToRole="Correo" />
+          <NavigationProperty Name="Marcas" Relationship="Self.FK_ColabMarca" FromRole="Colaborador" ToRole="Marca" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Colaborador" FromRole="Colaborador" ToRole="Usuario" />
+          <NavigationProperty Name="Preavisoes" Relationship="Self.FK_ColabPreaviso" FromRole="Colaborador" ToRole="Preaviso" />
+          <NavigationProperty Name="Salarios" Relationship="Self.FK_Colabsal" FromRole="Colaborador" ToRole="Salario" />
+          <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Colabtelef" FromRole="Colaborador" ToRole="Telefono" />
+          <NavigationProperty Name="RubrosDeduccions" Relationship="Self.FK_ColabxDedFijas" FromRole="Colaborador" ToRole="RubrosDeduccion" />
+          <NavigationProperty Name="Embargos" Relationship="Self.FK_ColabxEmb" FromRole="Colaborador" ToRole="Embargos" />
+          <NavigationProperty Name="Feriadoes" Relationship="Self.FK_Colabxfer" FromRole="Colaborador" ToRole="Feriado" />
+          <NavigationProperty Name="ImpuestoRentas" Relationship="Self.FK_ColabXImpR" FromRole="Colaborador" ToRole="ImpuestoRenta" />
+          <NavigationProperty Name="LlegadaTardias" Relationship="Self.FK_ColabxLleg" FromRole="Colaborador" ToRole="LlegadaTardias" />
+          <NavigationProperty Name="DetalleMarcas" Relationship="Self.FK_ColabxMarca" FromRole="Colaborador" ToRole="DetalleMarca" />
+          <NavigationProperty Name="Permisos" Relationship="Self.FK_ColabxPer" FromRole="Colaborador" ToRole="Permisos" />
+          <NavigationProperty Name="DetallePlanillas" Relationship="Self.FK_ColabxPlan" FromRole="Colaborador" ToRole="DetallePlanilla" />
+          <NavigationProperty Name="Planillas" Relationship="Self.FK_ColabxPlanilla" FromRole="Colaborador" ToRole="Planilla" />
+          <NavigationProperty Name="HorasExtras" Relationship="Self.FK_ColabxTHExtra" FromRole="Colaborador" ToRole="HorasExtra" />
+          <NavigationProperty Name="Departamento" Relationship="Self.FK_Departamento" FromRole="Colaborador" ToRole="Departamento" />
+          <NavigationProperty Name="EstadoCivil" Relationship="Self.FK_EstadoCivil" FromRole="Colaborador" ToRole="EstadoCivil" />
+          <NavigationProperty Name="Genero" Relationship="Self.FK_Genero" FromRole="Colaborador" ToRole="Genero" />
+          <NavigationProperty Name="Incapacidads" Relationship="Self.FK_Incapxcolab" FromRole="Colaborador" ToRole="Incapacidad" />
+          <NavigationProperty Name="Jornada" Relationship="Self.FK_Jornada" FromRole="Colaborador" ToRole="Jornada" />
+          <NavigationProperty Name="Vacaciones" Relationship="Self.FK_Vacaciones" FromRole="Colaborador" ToRole="Vacaciones" />
+        </EntityType>
+        <EntityType Name="Correo">
+          <Key>
+            <PropertyRef Name="idCorreo" />
+          </Key>
+          <Property Name="idCorreo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Correo1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idTipoCorreo" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabCorreo" FromRole="Correo" ToRole="Colaborador" />
+          <NavigationProperty Name="TipoCorreo" Relationship="Self.FK_TipoCorreo" FromRole="Correo" ToRole="TipoCorreo" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Departamento1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaboradors" Relationship="Self.FK_Departamento" FromRole="Departamento" ToRole="Colaborador" />
+          <NavigationProperty Name="Puestoes" Relationship="Self.DepartamentoXPuesto" FromRole="Departamento" ToRole="Puesto" />
+        </EntityType>
+        <EntityType Name="DetalleMarca">
+          <Key>
+            <PropertyRef Name="idDetMarca" />
+          </Key>
+          <Property Name="idDetMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioReg" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CantHoras" Type="Int32" Nullable="false" />
+          <Property Name="IdMarca" Type="Int32" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxMarca" FromRole="DetalleMarca" ToRole="Colaborador" />
+          <NavigationProperty Name="Marca" Relationship="Self.FK_DetxMarca" FromRole="DetalleMarca" ToRole="Marca" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubxDetMarca" FromRole="DetalleMarca" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="DetallePlanilla">
+          <Key>
+            <PropertyRef Name="idDetallePlanilla" />
+          </Key>
+          <Property Name="idDetallePlanilla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodPlanilla" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="IdSalario" Type="Int32" Nullable="false" />
+          <Property Name="SalarioNeto" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="SalarioBruto" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxPlan" FromRole="DetallePlanilla" ToRole="Colaborador" />
+          <NavigationProperty Name="Planilla" Relationship="Self.FK_PlanxDet" FromRole="DetallePlanilla" ToRole="Planilla" />
+          <NavigationProperty Name="Salario" Relationship="Self.FK_PlanxSal" FromRole="DetallePlanilla" ToRole="Salario" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubroxPlan" FromRole="DetallePlanilla" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Embargo">
+          <Key>
+            <PropertyRef Name="idEmbargo" />
+          </Key>
+          <Property Name="idEmbargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PorcRebajo" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="MontoEmbargo" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxEmb" FromRole="Embargos" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubxEmb" FromRole="Embargos" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="idEstadoCivil" />
+          </Key>
+          <Property Name="idEstadoCivil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoCivil1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaboradors" Relationship="Self.FK_EstadoCivil" FromRole="EstadoCivil" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="EstadoPlanilla">
+          <Key>
+            <PropertyRef Name="idEstadoPlanilla" />
+          </Key>
+          <Property Name="idEstadoPlanilla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoPlanilla1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Planillas" Relationship="Self.FK_EstadoPlanilla" FromRole="EstadoPlanilla" ToRole="Planilla" />
+        </EntityType>
+        <EntityType Name="Feriado">
+          <Key>
+            <PropertyRef Name="idFeriado" />
+          </Key>
+          <Property Name="idFeriado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Descripcion" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idTipoPagoFeriado" Type="Int32" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Colabxfer" FromRole="Feriado" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubxFer" FromRole="Feriado" ToRole="Rubro" />
+          <NavigationProperty Name="TipoPagoFeriado" Relationship="Self.FK_TipoPagoFeriado" FromRole="Feriado" ToRole="TipoPagoFeriado" />
+        </EntityType>
+        <EntityType Name="Genero">
+          <Key>
+            <PropertyRef Name="idGenero" />
+          </Key>
+          <Property Name="idGenero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoGenero" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaboradors" Relationship="Self.FK_Genero" FromRole="Genero" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="HorasExtra">
+          <Key>
+            <PropertyRef Name="idHorasextra" />
+          </Key>
+          <Property Name="idHorasextra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HoraInicio" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="HoraFin" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Descripcion" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idTipoHoraExtra" Type="Int32" Nullable="false" />
+          <Property Name="TotalHoras" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxTHExtra" FromRole="HorasExtra" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubxHExtra" FromRole="HorasExtra" ToRole="Rubro" />
+          <NavigationProperty Name="TipoHoraExtra" Relationship="Self.FK_THoraExtra" FromRole="HorasExtra" ToRole="TipoHoraExtra" />
+        </EntityType>
+        <EntityType Name="ImpuestoRenta">
+          <Key>
+            <PropertyRef Name="idImpuestoRenta" />
+          </Key>
+          <Property Name="idImpuestoRenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="idRangoImpuesto" Type="Int32" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabXImpR" FromRole="ImpuestoRenta" ToRole="Colaborador" />
+          <NavigationProperty Name="RangoImpuesto" Relationship="Self.FK_RangoImpuesto" FromRole="ImpuestoRenta" ToRole="RangoImpuesto" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubXIRenta" FromRole="ImpuestoRenta" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Incapacidad">
+          <Key>
+            <PropertyRef Name="idIncapacidad" />
+          </Key>
+          <Property Name="idIncapacidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TotalDias" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Incapxcolab" FromRole="Incapacidad" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubInc" FromRole="Incapacidad" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Jornada">
+          <Key>
+            <PropertyRef Name="idJornada" />
+          </Key>
+          <Property Name="idJornada" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoraInicio" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="HoraFin" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <Property Name="idTurno" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Colaboradors" Relationship="Self.FK_Jornada" FromRole="Jornada" ToRole="Colaborador" />
+          <NavigationProperty Name="Turno" Relationship="Self.FK_JornadaTurno" FromRole="Jornada" ToRole="Turno" />
+        </EntityType>
+        <EntityType Name="LlegadaTardia">
+          <Key>
+            <PropertyRef Name="idLlegadasTardia" />
+          </Key>
+          <Property Name="idLlegadasTardia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Horallegada" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="TotalTiempo" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxLleg" FromRole="LlegadaTardias" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubLleg" FromRole="LlegadaTardias" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="IdMarca" />
+          </Key>
+          <Property Name="IdMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="NumMarca" Type="Int32" Nullable="false" />
+          <Property Name="Machn" Type="Int32" Nullable="false" />
+          <Property Name="Codhuella" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mode" Type="Int32" Nullable="false" />
+          <Property Name="IOMd" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabMarca" FromRole="Marca" ToRole="Colaborador" />
+          <NavigationProperty Name="DetalleMarcas" Relationship="Self.FK_DetxMarca" FromRole="Marca" ToRole="DetalleMarca" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="idPermisos" />
+          </Key>
+          <Property Name="idPermisos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HoraInicio" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="HoraFin" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Totaltiempo" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxPer" FromRole="Permisos" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubPer" FromRole="Permisos" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Planilla">
+          <Key>
+            <PropertyRef Name="CodPlanilla" />
+          </Key>
+          <Property Name="CodPlanilla" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Anno" Type="Int32" Nullable="false" />
+          <Property Name="Semana" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaCierre" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idEstadoPlanilla" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxPlanilla" FromRole="Planilla" ToRole="Colaborador" />
+          <NavigationProperty Name="DetallePlanillas" Relationship="Self.FK_PlanxDet" FromRole="Planilla" ToRole="DetallePlanilla" />
+          <NavigationProperty Name="EstadoPlanilla" Relationship="Self.FK_EstadoPlanilla" FromRole="Planilla" ToRole="EstadoPlanilla" />
+        </EntityType>
+        <EntityType Name="Preaviso">
+          <Key>
+            <PropertyRef Name="idPreaviso" />
+          </Key>
+          <Property Name="idPreaviso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TotalDias" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabPreaviso" FromRole="Preaviso" ToRole="Colaborador" />
+        </EntityType>
+        <EntityType Name="Puesto">
+          <Key>
+            <PropertyRef Name="idPuesto" />
+          </Key>
+          <Property Name="idPuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Puesto1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Departamentoes" Relationship="Self.DepartamentoXPuesto" FromRole="Puesto" ToRole="Departamento" />
+        </EntityType>
+        <EntityType Name="RangoImpuesto">
+          <Key>
+            <PropertyRef Name="idRangoImpuesto" />
+          </Key>
+          <Property Name="idRangoImpuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Porcentaje" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ImpuestoRentas" Relationship="Self.FK_RangoImpuesto" FromRole="RangoImpuesto" ToRole="ImpuestoRenta" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rol1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Rol" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Rubro">
+          <Key>
+            <PropertyRef Name="idRubro" />
+          </Key>
+          <Property Name="idRubro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Adelantoes" Relationship="Self.FK_RubxAdel" FromRole="Rubro" ToRole="Adelanto" />
+          <NavigationProperty Name="Ausencias" Relationship="Self.FK_RubAus" FromRole="Rubro" ToRole="Ausencias" />
+          <NavigationProperty Name="DetalleMarcas" Relationship="Self.FK_RubxDetMarca" FromRole="Rubro" ToRole="DetalleMarca" />
+          <NavigationProperty Name="DetallePlanillas" Relationship="Self.FK_RubroxPlan" FromRole="Rubro" ToRole="DetallePlanilla" />
+          <NavigationProperty Name="Embargos" Relationship="Self.FK_RubxEmb" FromRole="Rubro" ToRole="Embargos" />
+          <NavigationProperty Name="Feriadoes" Relationship="Self.FK_RubxFer" FromRole="Rubro" ToRole="Feriado" />
+          <NavigationProperty Name="HorasExtras" Relationship="Self.FK_RubxHExtra" FromRole="Rubro" ToRole="HorasExtra" />
+          <NavigationProperty Name="ImpuestoRentas" Relationship="Self.FK_RubXIRenta" FromRole="Rubro" ToRole="ImpuestoRenta" />
+          <NavigationProperty Name="Incapacidads" Relationship="Self.FK_RubInc" FromRole="Rubro" ToRole="Incapacidad" />
+          <NavigationProperty Name="LlegadaTardias" Relationship="Self.FK_RubLleg" FromRole="Rubro" ToRole="LlegadaTardias" />
+          <NavigationProperty Name="Permisos" Relationship="Self.FK_RubPer" FromRole="Rubro" ToRole="Permisos" />
+          <NavigationProperty Name="RubrosDeduccions" Relationship="Self.FK_RubxDedFijas" FromRole="Rubro" ToRole="RubrosDeduccion" />
+        </EntityType>
+        <EntityType Name="RubrosDeduccion">
+          <Key>
+            <PropertyRef Name="idRubroDeduccion" />
+          </Key>
+          <Property Name="idRubroDeduccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Porcentaje" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="idRubro" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_ColabxDedFijas" FromRole="RubrosDeduccion" ToRole="Colaborador" />
+          <NavigationProperty Name="Rubro" Relationship="Self.FK_RubxDedFijas" FromRole="RubrosDeduccion" ToRole="Rubro" />
+        </EntityType>
+        <EntityType Name="Salario">
+          <Key>
+            <PropertyRef Name="idSalario" />
+          </Key>
+          <Property Name="idSalario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Monto" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Colabsal" FromRole="Salario" ToRole="Colaborador" />
+          <NavigationProperty Name="DetallePlanillas" Relationship="Self.FK_PlanxSal" FromRole="Salario" ToRole="DetallePlanilla" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="idTelefono" />
+          </Key>
+          <Property Name="idTelefono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Telefono1" Type="Int32" Nullable="false" />
+          <Property Name="idTipoTelefono" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Colabtelef" FromRole="Telefono" ToRole="Colaborador" />
+          <NavigationProperty Name="TipoTelefono" Relationship="Self.FK_TipoTelef" FromRole="Telefono" ToRole="TipoTelefono" />
+        </EntityType>
+        <EntityType Name="TipoCorreo">
+          <Key>
+            <PropertyRef Name="idTipoCorreo" />
+          </Key>
+          <Property Name="idTipoCorreo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoCorreo1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Correos" Relationship="Self.FK_TipoCorreo" FromRole="TipoCorreo" ToRole="Correo" />
+        </EntityType>
+        <EntityType Name="TipoHoraExtra">
+          <Key>
+            <PropertyRef Name="idTipoHoraExtra" />
+          </Key>
+          <Property Name="idTipoHoraExtra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoHoraExtra1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Porcentaje" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="HorasExtras" Relationship="Self.FK_THoraExtra" FromRole="TipoHoraExtra" ToRole="HorasExtra" />
+        </EntityType>
+        <EntityType Name="TipoPagoFeriado">
+          <Key>
+            <PropertyRef Name="idTipoPagoFeriado" />
+          </Key>
+          <Property Name="idTipoPagoFeriado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoPagoFeriado1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Feriadoes" Relationship="Self.FK_TipoPagoFeriado" FromRole="TipoPagoFeriado" ToRole="Feriado" />
+        </EntityType>
+        <EntityType Name="TipoTelefono">
+          <Key>
+            <PropertyRef Name="idTipoTelefono" />
+          </Key>
+          <Property Name="idTipoTelefono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipoTelefono1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Telefonoes" Relationship="Self.FK_TipoTelef" FromRole="TipoTelefono" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="Turno">
+          <Key>
+            <PropertyRef Name="idTurno" />
+          </Key>
+          <Property Name="idTurno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Turno1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Jornadas" Relationship="Self.FK_JornadaTurno" FromRole="Turno" ToRole="Jornada" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="Usuario1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idRol" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Colaborador" FromRole="Usuario" ToRole="Colaborador" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_Rol" FromRole="Usuario" ToRole="Rol" />
+        </EntityType>
+        <EntityType Name="Vacacione">
+          <Key>
+            <PropertyRef Name="idVacaciones" />
+          </Key>
+          <Property Name="idVacaciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="Int32" Nullable="false" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Total" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Colaborador" Relationship="Self.FK_Vacaciones" FromRole="Vacaciones" ToRole="Colaborador" />
+        </EntityType>
+        <Association Name="FK_ColabxAdel">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Adelanto" Type="Self.Adelanto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Adelanto">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxAdel">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Adelanto" Type="Self.Adelanto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Adelanto">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabAguinaldo">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Aguinaldo" Type="Self.Aguinaldo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Aguinaldo">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxAusenc">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Ausencias" Type="Self.Ausencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Ausencias">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubAus">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Ausencias" Type="Self.Ausencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Ausencias">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cesantias">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Cesantia" Type="Self.Cesantia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Cesantia">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabCorreo">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Correo" Type="Self.Correo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Correo">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabMarca">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Marca" Type="Self.Marca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Marca">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colaborador">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabPreaviso">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Preaviso" Type="Self.Preaviso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Preaviso">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colabsal">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Salario" Type="Self.Salario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Salario">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colabtelef">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxDedFijas">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="RubrosDeduccion" Type="Self.RubrosDeduccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="RubrosDeduccion">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxEmb">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Embargos" Type="Self.Embargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Embargos">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Colabxfer">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Feriado" Type="Self.Feriado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Feriado">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabXImpR">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="ImpuestoRenta">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxLleg">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="LlegadaTardias" Type="Self.LlegadaTardia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="LlegadaTardias">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxMarca">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="DetalleMarca" Type="Self.DetalleMarca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="DetalleMarca">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxPer">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Permisos" Type="Self.Permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxPlan">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxPlanilla">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Planilla" Type="Self.Planilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Planilla">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ColabxTHExtra">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="HorasExtra" Type="Self.HorasExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="HorasExtra">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoCivil">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="idEstadoCivil" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idEstadoCivil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Genero">
+          <End Role="Genero" Type="Self.Genero" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genero">
+              <PropertyRef Name="idGenero" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idGenero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Incapxcolab">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Incapacidad" Type="Self.Incapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Incapacidad">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Jornada">
+          <End Role="Jornada" Type="Self.Jornada" Multiplicity="1" />
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jornada">
+              <PropertyRef Name="idJornada" />
+            </Principal>
+            <Dependent Role="Colaborador">
+              <PropertyRef Name="idJornada" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vacaciones">
+          <End Role="Colaborador" Type="Self.Colaborador" Multiplicity="1" />
+          <End Role="Vacaciones" Type="Self.Vacacione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colaborador">
+              <PropertyRef Name="Cedula" />
+            </Principal>
+            <Dependent Role="Vacaciones">
+              <PropertyRef Name="Cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoCorreo">
+          <End Role="TipoCorreo" Type="Self.TipoCorreo" Multiplicity="1" />
+          <End Role="Correo" Type="Self.Correo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoCorreo">
+              <PropertyRef Name="idTipoCorreo" />
+            </Principal>
+            <Dependent Role="Correo">
+              <PropertyRef Name="idTipoCorreo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetxMarca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="DetalleMarca" Type="Self.DetalleMarca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="IdMarca" />
+            </Principal>
+            <Dependent Role="DetalleMarca">
+              <PropertyRef Name="IdMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxDetMarca">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="DetalleMarca" Type="Self.DetalleMarca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="DetalleMarca">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlanxDet">
+          <End Role="Planilla" Type="Self.Planilla" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planilla">
+              <PropertyRef Name="CodPlanilla" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="CodPlanilla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlanxSal">
+          <End Role="Salario" Type="Self.Salario" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Salario">
+              <PropertyRef Name="idSalario" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="IdSalario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubroxPlan">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="DetallePlanilla" Type="Self.DetallePlanilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="DetallePlanilla">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxEmb">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Embargos" Type="Self.Embargo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Embargos">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoPlanilla">
+          <End Role="EstadoPlanilla" Type="Self.EstadoPlanilla" Multiplicity="1" />
+          <End Role="Planilla" Type="Self.Planilla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoPlanilla">
+              <PropertyRef Name="idEstadoPlanilla" />
+            </Principal>
+            <Dependent Role="Planilla">
+              <PropertyRef Name="idEstadoPlanilla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxFer">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Feriado" Type="Self.Feriado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Feriado">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoPagoFeriado">
+          <End Role="TipoPagoFeriado" Type="Self.TipoPagoFeriado" Multiplicity="1" />
+          <End Role="Feriado" Type="Self.Feriado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoPagoFeriado">
+              <PropertyRef Name="idTipoPagoFeriado" />
+            </Principal>
+            <Dependent Role="Feriado">
+              <PropertyRef Name="idTipoPagoFeriado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxHExtra">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="HorasExtra" Type="Self.HorasExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="HorasExtra">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_THoraExtra">
+          <End Role="TipoHoraExtra" Type="Self.TipoHoraExtra" Multiplicity="1" />
+          <End Role="HorasExtra" Type="Self.HorasExtra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoHoraExtra">
+              <PropertyRef Name="idTipoHoraExtra" />
+            </Principal>
+            <Dependent Role="HorasExtra">
+              <PropertyRef Name="idTipoHoraExtra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RangoImpuesto">
+          <End Role="RangoImpuesto" Type="Self.RangoImpuesto" Multiplicity="1" />
+          <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RangoImpuesto">
+              <PropertyRef Name="idRangoImpuesto" />
+            </Principal>
+            <Dependent Role="ImpuestoRenta">
+              <PropertyRef Name="idRangoImpuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubXIRenta">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="ImpuestoRenta" Type="Self.ImpuestoRenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="ImpuestoRenta">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubInc">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Incapacidad" Type="Self.Incapacidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Incapacidad">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JornadaTurno">
+          <End Role="Turno" Type="Self.Turno" Multiplicity="1" />
+          <End Role="Jornada" Type="Self.Jornada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Turno">
+              <PropertyRef Name="idTurno" />
+            </Principal>
+            <Dependent Role="Jornada">
+              <PropertyRef Name="idTurno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubLleg">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="LlegadaTardias" Type="Self.LlegadaTardia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="LlegadaTardias">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubPer">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="Permisos" Type="Self.Permiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RubxDedFijas">
+          <End Role="Rubro" Type="Self.Rubro" Multiplicity="1" />
+          <End Role="RubrosDeduccion" Type="Self.RubrosDeduccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rubro">
+              <PropertyRef Name="idRubro" />
+            </Principal>
+            <Dependent Role="RubrosDeduccion">
+              <PropertyRef Name="idRubro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoTelef">
+          <End Role="TipoTelefono" Type="Self.TipoTelefono" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoTelefono">
+              <PropertyRef Name="idTipoTelefono" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="idTipoTelefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DepartamentoXPuesto">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="*" />
+          <End Role="Puesto" Type="Self.Puesto" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="db_a78cef_finixier" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adelantoes" EntityType="Self.Adelanto" />
+          <EntitySet Name="Aguinaldoes" EntityType="Self.Aguinaldo" />
+          <EntitySet Name="Ausencias" EntityType="Self.Ausencia" />
+          <EntitySet Name="Cesantias" EntityType="Self.Cesantia" />
+          <EntitySet Name="Colaboradors" EntityType="Self.Colaborador" />
+          <EntitySet Name="Correos" EntityType="Self.Correo" />
+          <EntitySet Name="Departamentoes" EntityType="Self.Departamento" />
+          <EntitySet Name="DetalleMarcas" EntityType="Self.DetalleMarca" />
+          <EntitySet Name="DetallePlanillas" EntityType="Self.DetallePlanilla" />
+          <EntitySet Name="Embargos" EntityType="Self.Embargo" />
+          <EntitySet Name="EstadoCivils" EntityType="Self.EstadoCivil" />
+          <EntitySet Name="EstadoPlanillas" EntityType="Self.EstadoPlanilla" />
+          <EntitySet Name="Feriadoes" EntityType="Self.Feriado" />
+          <EntitySet Name="Generoes" EntityType="Self.Genero" />
+          <EntitySet Name="HorasExtras" EntityType="Self.HorasExtra" />
+          <EntitySet Name="ImpuestoRentas" EntityType="Self.ImpuestoRenta" />
+          <EntitySet Name="Incapacidads" EntityType="Self.Incapacidad" />
+          <EntitySet Name="Jornadas" EntityType="Self.Jornada" />
+          <EntitySet Name="LlegadaTardias" EntityType="Self.LlegadaTardia" />
+          <EntitySet Name="Marcas" EntityType="Self.Marca" />
+          <EntitySet Name="Permisos" EntityType="Self.Permiso" />
+          <EntitySet Name="Planillas" EntityType="Self.Planilla" />
+          <EntitySet Name="Preavisoes" EntityType="Self.Preaviso" />
+          <EntitySet Name="Puestoes" EntityType="Self.Puesto" />
+          <EntitySet Name="RangoImpuestoes" EntityType="Self.RangoImpuesto" />
+          <EntitySet Name="Rols" EntityType="Self.Rol" />
+          <EntitySet Name="Rubroes" EntityType="Self.Rubro" />
+          <EntitySet Name="RubrosDeduccions" EntityType="Self.RubrosDeduccion" />
+          <EntitySet Name="Salarios" EntityType="Self.Salario" />
+          <EntitySet Name="Telefonoes" EntityType="Self.Telefono" />
+          <EntitySet Name="TipoCorreos" EntityType="Self.TipoCorreo" />
+          <EntitySet Name="TipoHoraExtras" EntityType="Self.TipoHoraExtra" />
+          <EntitySet Name="TipoPagoFeriadoes" EntityType="Self.TipoPagoFeriado" />
+          <EntitySet Name="TipoTelefonoes" EntityType="Self.TipoTelefono" />
+          <EntitySet Name="Turnoes" EntityType="Self.Turno" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <EntitySet Name="Vacaciones" EntityType="Self.Vacacione" />
+          <AssociationSet Name="FK_ColabxAdel" Association="Self.FK_ColabxAdel">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Adelanto" EntitySet="Adelantoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxAdel" Association="Self.FK_RubxAdel">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="Adelanto" EntitySet="Adelantoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabAguinaldo" Association="Self.FK_ColabAguinaldo">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Aguinaldo" EntitySet="Aguinaldoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxAusenc" Association="Self.FK_ColabxAusenc">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Ausencias" EntitySet="Ausencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubAus" Association="Self.FK_RubAus">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="Ausencias" EntitySet="Ausencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cesantias" Association="Self.FK_Cesantias">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Cesantia" EntitySet="Cesantias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabCorreo" Association="Self.FK_ColabCorreo">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Correo" EntitySet="Correos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabMarca" Association="Self.FK_ColabMarca">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Marca" EntitySet="Marcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colaborador" Association="Self.FK_Colaborador">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabPreaviso" Association="Self.FK_ColabPreaviso">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Preaviso" EntitySet="Preavisoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colabsal" Association="Self.FK_Colabsal">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Salario" EntitySet="Salarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colabtelef" Association="Self.FK_Colabtelef">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxDedFijas" Association="Self.FK_ColabxDedFijas">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="RubrosDeduccion" EntitySet="RubrosDeduccions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxEmb" Association="Self.FK_ColabxEmb">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Embargos" EntitySet="Embargos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Colabxfer" Association="Self.FK_Colabxfer">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Feriado" EntitySet="Feriadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabXImpR" Association="Self.FK_ColabXImpR">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="ImpuestoRenta" EntitySet="ImpuestoRentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxLleg" Association="Self.FK_ColabxLleg">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="LlegadaTardias" EntitySet="LlegadaTardias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxMarca" Association="Self.FK_ColabxMarca">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="DetalleMarca" EntitySet="DetalleMarcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxPer" Association="Self.FK_ColabxPer">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxPlan" Association="Self.FK_ColabxPlan">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanillas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxPlanilla" Association="Self.FK_ColabxPlanilla">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Planilla" EntitySet="Planillas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ColabxTHExtra" Association="Self.FK_ColabxTHExtra">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="HorasExtra" EntitySet="HorasExtras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departamento" Association="Self.FK_Departamento">
+            <End Role="Departamento" EntitySet="Departamentoes" />
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoCivil" Association="Self.FK_EstadoCivil">
+            <End Role="EstadoCivil" EntitySet="EstadoCivils" />
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Genero" Association="Self.FK_Genero">
+            <End Role="Genero" EntitySet="Generoes" />
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Incapxcolab" Association="Self.FK_Incapxcolab">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Incapacidad" EntitySet="Incapacidads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jornada" Association="Self.FK_Jornada">
+            <End Role="Jornada" EntitySet="Jornadas" />
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vacaciones" Association="Self.FK_Vacaciones">
+            <End Role="Colaborador" EntitySet="Colaboradors" />
+            <End Role="Vacaciones" EntitySet="Vacaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoCorreo" Association="Self.FK_TipoCorreo">
+            <End Role="TipoCorreo" EntitySet="TipoCorreos" />
+            <End Role="Correo" EntitySet="Correos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetxMarca" Association="Self.FK_DetxMarca">
+            <End Role="Marca" EntitySet="Marcas" />
+            <End Role="DetalleMarca" EntitySet="DetalleMarcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxDetMarca" Association="Self.FK_RubxDetMarca">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="DetalleMarca" EntitySet="DetalleMarcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlanxDet" Association="Self.FK_PlanxDet">
+            <End Role="Planilla" EntitySet="Planillas" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanillas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlanxSal" Association="Self.FK_PlanxSal">
+            <End Role="Salario" EntitySet="Salarios" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanillas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubroxPlan" Association="Self.FK_RubroxPlan">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="DetallePlanilla" EntitySet="DetallePlanillas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxEmb" Association="Self.FK_RubxEmb">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="Embargos" EntitySet="Embargos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoPlanilla" Association="Self.FK_EstadoPlanilla">
+            <End Role="EstadoPlanilla" EntitySet="EstadoPlanillas" />
+            <End Role="Planilla" EntitySet="Planillas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxFer" Association="Self.FK_RubxFer">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="Feriado" EntitySet="Feriadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoPagoFeriado" Association="Self.FK_TipoPagoFeriado">
+            <End Role="TipoPagoFeriado" EntitySet="TipoPagoFeriadoes" />
+            <End Role="Feriado" EntitySet="Feriadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxHExtra" Association="Self.FK_RubxHExtra">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="HorasExtra" EntitySet="HorasExtras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_THoraExtra" Association="Self.FK_THoraExtra">
+            <End Role="TipoHoraExtra" EntitySet="TipoHoraExtras" />
+            <End Role="HorasExtra" EntitySet="HorasExtras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RangoImpuesto" Association="Self.FK_RangoImpuesto">
+            <End Role="RangoImpuesto" EntitySet="RangoImpuestoes" />
+            <End Role="ImpuestoRenta" EntitySet="ImpuestoRentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubXIRenta" Association="Self.FK_RubXIRenta">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="ImpuestoRenta" EntitySet="ImpuestoRentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubInc" Association="Self.FK_RubInc">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="Incapacidad" EntitySet="Incapacidads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JornadaTurno" Association="Self.FK_JornadaTurno">
+            <End Role="Turno" EntitySet="Turnoes" />
+            <End Role="Jornada" EntitySet="Jornadas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubLleg" Association="Self.FK_RubLleg">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="LlegadaTardias" EntitySet="LlegadaTardias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubPer" Association="Self.FK_RubPer">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rol" Association="Self.FK_Rol">
+            <End Role="Rol" EntitySet="Rols" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RubxDedFijas" Association="Self.FK_RubxDedFijas">
+            <End Role="Rubro" EntitySet="Rubroes" />
+            <End Role="RubrosDeduccion" EntitySet="RubrosDeduccions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoTelef" Association="Self.FK_TipoTelef">
+            <End Role="TipoTelefono" EntitySet="TipoTelefonoes" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <AssociationSet Name="DepartamentoXPuesto" Association="Self.DepartamentoXPuesto">
+            <End Role="Departamento" EntitySet="Departamentoes" />
+            <End Role="Puesto" EntitySet="Puestoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_a78cef_finixierModelStoreContainer" CdmEntityContainer="db_a78cef_finixier">
+          <EntitySetMapping Name="Adelantoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Adelanto">
+              <MappingFragment StoreEntitySet="Adelanto">
+                <ScalarProperty Name="idAdelanto" ColumnName="idAdelanto" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PorcRebajo" ColumnName="PorcRebajo" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aguinaldoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Aguinaldo">
+              <MappingFragment StoreEntitySet="Aguinaldo">
+                <ScalarProperty Name="idAguinaldo" ColumnName="idAguinaldo" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ausencias">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Ausencia">
+              <MappingFragment StoreEntitySet="Ausencias">
+                <ScalarProperty Name="idAusencia" ColumnName="idAusencia" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="TotalDias" ColumnName="TotalDias" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cesantias">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Cesantia">
+              <MappingFragment StoreEntitySet="Cesantia">
+                <ScalarProperty Name="idCesantia" ColumnName="idCesantia" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Meses" ColumnName="Meses" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colaboradors">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Colaborador">
+              <MappingFragment StoreEntitySet="Colaborador">
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+                <ScalarProperty Name="idEstadoCivil" ColumnName="idEstadoCivil" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="idJornada" ColumnName="idJornada" />
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="NivelEscolaridad" ColumnName="NivelEscolaridad" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Correos">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Correo">
+              <MappingFragment StoreEntitySet="Correo">
+                <ScalarProperty Name="idCorreo" ColumnName="idCorreo" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Correo1" ColumnName="Correo" />
+                <ScalarProperty Name="idTipoCorreo" ColumnName="idTipoCorreo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="Departamento1" ColumnName="Departamento" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleMarcas">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.DetalleMarca">
+              <MappingFragment StoreEntitySet="DetalleMarca">
+                <ScalarProperty Name="idDetMarca" ColumnName="idDetMarca" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="UsuarioReg" ColumnName="UsuarioReg" />
+                <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="CantHoras" ColumnName="CantHoras" />
+                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetallePlanillas">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.DetallePlanilla">
+              <MappingFragment StoreEntitySet="DetallePlanilla">
+                <ScalarProperty Name="idDetallePlanilla" ColumnName="idDetallePlanilla" />
+                <ScalarProperty Name="CodPlanilla" ColumnName="CodPlanilla" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="IdSalario" ColumnName="IdSalario" />
+                <ScalarProperty Name="SalarioNeto" ColumnName="SalarioNeto" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="SalarioBruto" ColumnName="SalarioBruto" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Embargos">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Embargo">
+              <MappingFragment StoreEntitySet="Embargos">
+                <ScalarProperty Name="idEmbargo" ColumnName="idEmbargo" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PorcRebajo" ColumnName="PorcRebajo" />
+                <ScalarProperty Name="MontoEmbargo" ColumnName="MontoEmbargo" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoCivils">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.EstadoCivil">
+              <MappingFragment StoreEntitySet="EstadoCivil">
+                <ScalarProperty Name="idEstadoCivil" ColumnName="idEstadoCivil" />
+                <ScalarProperty Name="EstadoCivil1" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoPlanillas">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.EstadoPlanilla">
+              <MappingFragment StoreEntitySet="EstadoPlanilla">
+                <ScalarProperty Name="idEstadoPlanilla" ColumnName="idEstadoPlanilla" />
+                <ScalarProperty Name="EstadoPlanilla1" ColumnName="EstadoPlanilla" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feriadoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Feriado">
+              <MappingFragment StoreEntitySet="Feriado">
+                <ScalarProperty Name="idFeriado" ColumnName="idFeriado" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="idTipoPagoFeriado" ColumnName="idTipoPagoFeriado" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Generoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Genero">
+              <MappingFragment StoreEntitySet="Genero">
+                <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+                <ScalarProperty Name="TipoGenero" ColumnName="TipoGenero" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HorasExtras">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.HorasExtra">
+              <MappingFragment StoreEntitySet="HorasExtra">
+                <ScalarProperty Name="idHorasextra" ColumnName="idHorasextra" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+                <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="idTipoHoraExtra" ColumnName="idTipoHoraExtra" />
+                <ScalarProperty Name="TotalHoras" ColumnName="TotalHoras" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImpuestoRentas">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.ImpuestoRenta">
+              <MappingFragment StoreEntitySet="ImpuestoRenta">
+                <ScalarProperty Name="idImpuestoRenta" ColumnName="idImpuestoRenta" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="idRangoImpuesto" ColumnName="idRangoImpuesto" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incapacidads">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Incapacidad">
+              <MappingFragment StoreEntitySet="Incapacidad">
+                <ScalarProperty Name="idIncapacidad" ColumnName="idIncapacidad" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="TotalDias" ColumnName="TotalDias" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jornadas">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Jornada">
+              <MappingFragment StoreEntitySet="Jornada">
+                <ScalarProperty Name="idJornada" ColumnName="idJornada" />
+                <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+                <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LlegadaTardias">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.LlegadaTardia">
+              <MappingFragment StoreEntitySet="LlegadaTardias">
+                <ScalarProperty Name="idLlegadasTardia" ColumnName="idLlegadasTardia" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Horallegada" ColumnName="Horallegada" />
+                <ScalarProperty Name="TotalTiempo" ColumnName="TotalTiempo" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marcas">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Marca">
+              <MappingFragment StoreEntitySet="Marca">
+                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="NumMarca" ColumnName="NumMarca" />
+                <ScalarProperty Name="Machn" ColumnName="Machn" />
+                <ScalarProperty Name="Codhuella" ColumnName="Codhuella" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="IOMd" ColumnName="IOMd" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permisos">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Permiso">
+              <MappingFragment StoreEntitySet="Permisos">
+                <ScalarProperty Name="idPermisos" ColumnName="idPermisos" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="HoraInicio" ColumnName="HoraInicio" />
+                <ScalarProperty Name="HoraFin" ColumnName="HoraFin" />
+                <ScalarProperty Name="Totaltiempo" ColumnName="Totaltiempo" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Planillas">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Planilla">
+              <MappingFragment StoreEntitySet="Planilla">
+                <ScalarProperty Name="CodPlanilla" ColumnName="CodPlanilla" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Anno" ColumnName="Anno" />
+                <ScalarProperty Name="Semana" ColumnName="Semana" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+                <ScalarProperty Name="idEstadoPlanilla" ColumnName="idEstadoPlanilla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Preavisoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Preaviso">
+              <MappingFragment StoreEntitySet="Preaviso">
+                <ScalarProperty Name="idPreaviso" ColumnName="idPreaviso" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="TotalDias" ColumnName="TotalDias" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puestoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Puesto">
+              <MappingFragment StoreEntitySet="Puesto">
+                <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
+                <ScalarProperty Name="Puesto1" ColumnName="Puesto" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RangoImpuestoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.RangoImpuesto">
+              <MappingFragment StoreEntitySet="RangoImpuesto">
+                <ScalarProperty Name="idRangoImpuesto" ColumnName="idRangoImpuesto" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rols">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="Rol1" ColumnName="Rol" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rubroes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Rubro">
+              <MappingFragment StoreEntitySet="Rubro">
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RubrosDeduccions">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.RubrosDeduccion">
+              <MappingFragment StoreEntitySet="RubrosDeduccion">
+                <ScalarProperty Name="idRubroDeduccion" ColumnName="idRubroDeduccion" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="idRubro" ColumnName="idRubro" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salarios">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Salario">
+              <MappingFragment StoreEntitySet="Salario">
+                <ScalarProperty Name="idSalario" ColumnName="idSalario" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telefonoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Telefono">
+              <MappingFragment StoreEntitySet="Telefono">
+                <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono" />
+                <ScalarProperty Name="idTipoTelefono" ColumnName="idTipoTelefono" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoCorreos">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoCorreo">
+              <MappingFragment StoreEntitySet="TipoCorreo">
+                <ScalarProperty Name="idTipoCorreo" ColumnName="idTipoCorreo" />
+                <ScalarProperty Name="TipoCorreo1" ColumnName="TipoCorreo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoHoraExtras">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoHoraExtra">
+              <MappingFragment StoreEntitySet="TipoHoraExtra">
+                <ScalarProperty Name="idTipoHoraExtra" ColumnName="idTipoHoraExtra" />
+                <ScalarProperty Name="TipoHoraExtra1" ColumnName="TipoHoraExtra" />
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoPagoFeriadoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoPagoFeriado">
+              <MappingFragment StoreEntitySet="TipoPagoFeriado">
+                <ScalarProperty Name="idTipoPagoFeriado" ColumnName="idTipoPagoFeriado" />
+                <ScalarProperty Name="TipoPagoFeriado1" ColumnName="TipoPagoFeriado" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoTelefonoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.TipoTelefono">
+              <MappingFragment StoreEntitySet="TipoTelefono">
+                <ScalarProperty Name="idTipoTelefono" ColumnName="idTipoTelefono" />
+                <ScalarProperty Name="TipoTelefono1" ColumnName="TipoTelefono" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Turnoes">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Turno">
+              <MappingFragment StoreEntitySet="Turno">
+                <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+                <ScalarProperty Name="Turno1" ColumnName="Turno" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacaciones">
+            <EntityTypeMapping TypeName="db_a78cef_finixierModel.Vacacione">
+              <MappingFragment StoreEntitySet="Vacaciones">
+                <ScalarProperty Name="idVacaciones" ColumnName="idVacaciones" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="DepartamentoXPuesto" TypeName="db_a78cef_finixierModel.DepartamentoXPuesto" StoreEntitySet="DepartamentoXPuesto">
+            <EndProperty Name="Departamento">
+              <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+            </EndProperty>
+            <EndProperty Name="Puesto">
+              <ScalarProperty Name="idPuesto" ColumnName="idPuesto" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

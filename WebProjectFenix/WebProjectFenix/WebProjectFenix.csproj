@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -44,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -123,6 +130,132 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Adelanto.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Aguinaldo.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ausencia.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BdFinixier.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdFinixier.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BdFinixier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BdFinixier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BdFinixier.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cesantia.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Colaborador.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Correo.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departamento.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetalleMarca.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetallePlanilla.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Embargo.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoCivil.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EstadoPlanilla.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Feriado.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Genero.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HorasExtra.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ImpuestoRenta.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Incapacidad.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Jornada.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LlegadaTardia.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Marca.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Permiso.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Planilla.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Preaviso.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Puesto.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RangoImpuesto.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rol.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rubro.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RubrosDeduccion.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Salario.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Telefono.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoCorreo.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoHoraExtra.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoPagoFeriado.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoTelefono.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Turno.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Vacacione.cs">
+      <DependentUpon>BdFinixier.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +294,16 @@
     <Content Include="img\userx.png" />
     <Content Include="img\userxx.png" />
     <Content Include="img\ver.jpg" />
+    <Content Include="Models\BdFinixier.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BdFinixier.edmx</DependentUpon>
+      <LastGenOutput>BdFinixier.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BdFinixier.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BdFinixier.edmx</DependentUpon>
+      <LastGenOutput>BdFinixier.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -189,6 +332,13 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\BdFinixier.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BdFinixier.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BdFinixier.edmx.diagram">
+      <DependentUpon>BdFinixier.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -234,7 +384,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -243,6 +392,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -278,7 +430,10 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

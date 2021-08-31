@@ -132,3 +132,7 @@ C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\o
 C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\obj\Debug\WebProjectFenix.csproj.CopyComplete
 C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\obj\Debug\WebProjectFenix.dll
 C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\obj\Debug\WebProjectFenix.pdb
+C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\bin\EntityFramework.dll
+C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\bin\EntityFramework.SqlServer.dll
+C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\bin\EntityFramework.xml
+C:\Users\Nikol\source\repos\Niko-Jara\PTuia-cn\WebProjectFenix\WebProjectFenix\bin\EntityFramework.SqlServer.xml

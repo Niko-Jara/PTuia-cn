@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf0f6d9ea62540dbb52247a0af2e16b3" Name="Diagram1">
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Adelanto" Width="1.5" PointX="8.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Aguinaldo" Width="1.5" PointX="5.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Ausencia" Width="1.5" PointX="8.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Cesantia" Width="1.5" PointX="5.25" PointY="42.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Colaborador" Width="1.5" PointX="3" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Correo" Width="1.5" PointX="5.25" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Departamento" Width="1.5" PointX="0.75" PointY="40" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.DetalleMarca" Width="1.5" PointX="7.5" PointY="53.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.DetallePlanilla" Width="1.5" PointX="10.5" PointY="62.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Embargo" Width="1.5" PointX="8.25" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.EstadoCivil" Width="1.5" PointX="0.75" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.EstadoPlanilla" Width="1.5" PointX="6" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Feriado" Width="1.5" PointX="11.25" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Genero" Width="1.5" PointX="0.75" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.HorasExtra" Width="1.5" PointX="11.25" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.ImpuestoRenta" Width="1.5" PointX="5.25" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Incapacidad" Width="1.5" PointX="11.25" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Jornada" Width="1.5" PointX="0.75" PointY="45.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.LlegadaTardia" Width="1.5" PointX="5.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Marca" Width="1.5" PointX="5.25" PointY="71.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Permiso" Width="1.5" PointX="8.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Planilla" Width="1.5" PointX="8.25" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Preaviso" Width="1.5" PointX="5.25" PointY="82.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Puesto" Width="1.5" PointX="3" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.RangoImpuesto" Width="1.5" PointX="3" PointY="52" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Rol" Width="1.5" PointX="12" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Rubro" Width="1.5" PointX="3" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.RubrosDeduccion" Width="1.5" PointX="11.25" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Salario" Width="1.5" PointX="5.25" PointY="89" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Telefono" Width="1.5" PointX="14.25" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.TipoCorreo" Width="1.5" PointX="3" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.TipoHoraExtra" Width="1.5" PointX="9" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.TipoPagoFeriado" Width="1.5" PointX="9" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.TipoTelefono" Width="1.5" PointX="12" PointY="51.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Turno" Width="1.5" PointX="1.5" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Usuario" Width="1.5" PointX="14.25" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a78cef_finixierModel.Vacacione" Width="1.5" PointX="5.25" PointY="98.375" IsExpanded="true" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxAdel" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubxAdel" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabAguinaldo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxAusenc" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubAus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Cesantias" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabCorreo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabMarca" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Colaborador" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabPreaviso" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Colabsal" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Colabtelef" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxDedFijas" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxEmb" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Colabxfer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabXImpR" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxLleg" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxMarca" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxPer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxPlan" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxPlanilla" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_ColabxTHExtra" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_EstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Genero" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Incapxcolab" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Jornada" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Vacaciones" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_TipoCorreo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_DetxMarca" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubxDetMarca" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_PlanxDet" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_PlanxSal" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubroxPlan" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubxEmb" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_EstadoPlanilla" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubxFer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_TipoPagoFeriado" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubxHExtra" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_THoraExtra" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RangoImpuesto" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubXIRenta" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubInc" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_JornadaTurno" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubLleg" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubPer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_RubxDedFijas" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.FK_TipoTelef" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a78cef_finixierModel.DepartamentoXPuesto" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
