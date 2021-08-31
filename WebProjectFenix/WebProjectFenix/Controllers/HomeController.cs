@@ -48,37 +48,8 @@ namespace WebProjectFenix.Controllers
 
             return View();
         }
-        public ActionResult Vacaciones()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult Aguinaldo()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult Preavisos()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult Cesantias()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult HorasExtra()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult Feriados()
+        
+        public ActionResult JornadaExtra()
         {
             ViewBag.Message = "Your contact page.";
 
@@ -108,25 +79,7 @@ namespace WebProjectFenix.Controllers
 
             return View();
         }
-        public ActionResult Incapacidad()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult Permisos()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult Ausencia()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-        public ActionResult Embargos()
+        public ActionResult Prestaciones()
         {
             ViewBag.Message = "Your contact page.";
 

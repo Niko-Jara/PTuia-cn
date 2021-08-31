@@ -278,7 +278,13 @@ textarea {
 #modalausenc,
 #modalmodaus,
 #modalemb,
-#modalmodemb {
+#modalmodemb,
+#modaladelant,
+#modalmodadel,
+#modallegt,
+#modalmodllegt,
+#modalImpRent,
+#modalmodllegtar {
     max-width: 750px;
 }
 
@@ -315,7 +321,13 @@ textarea {
 #modalreausen,
 #modalaus,
 #modalcembargo,
-#modalmemb {
+#modalmemb,
+#modalcadel,
+#modalmadel,
+#modalxllegt,
+#modalmllegtar,
+#modalcImpRen,
+#modalmllegtard {
     margin-top: 100px;
 }
 
@@ -341,7 +353,21 @@ textarea {
     border-bottom: 2px solid #126b6d;
 }
 
-/*DETALLE DE MARCA*/
+/*SECCIONES MODALES y PANTALLAS*/
+/*cambiar id de otras tablas*/
 
-
-
+#SectionIncapacidad,
+#SectionPermisos,
+#SectionAusencia,
+#SectionEmbargos,
+#SectionAdelantos,
+#SectionLlegadasTardias,
+#SectionImpRenta,
+#SectionVacaciones,
+#SectionAguinaldo,
+#SectionPreavisos,
+#SectionCesantia,
+#SectionFeriados,
+#SectionHorasExtra{
+    display: none;
+}

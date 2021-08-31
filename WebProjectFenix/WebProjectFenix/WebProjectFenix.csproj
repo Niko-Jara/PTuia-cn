@@ -204,6 +204,9 @@
     <Content Include="Scripts\js\efect.js" />
     <Content Include="Scripts\js\scripts.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\vistas\Deducciones.js" />
+    <Content Include="Scripts\vistas\JornadaExtra.js" />
+    <Content Include="Scripts\vistas\Prestaciones.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -219,24 +222,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layoutlogin.cshtml" />
     <Content Include="Views\Home\Colaborador.cshtml" />
-    <Content Include="Views\Home\EPlanillas.cshtml" />
     <Content Include="Views\Home\Telefono.cshtml" />
     <Content Include="Views\Home\Correo.cshtml" />
     <Content Include="Views\Home\Salario.cshtml" />
-    <Content Include="Views\Home\Vacaciones.cshtml" />
-    <Content Include="Views\Home\Aguinaldo.cshtml" />
-    <Content Include="Views\Home\Preavisos.cshtml" />
-    <Content Include="Views\Home\Cesantias.cshtml" />
-    <Content Include="Views\Home\HorasExtra.cshtml" />
-    <Content Include="Views\Home\Feriados.cshtml" />
     <Content Include="Views\Home\Usuarios.cshtml" />
     <Content Include="Views\Home\Planilla.cshtml" />
     <Content Include="Views\Home\DetMarca.cshtml" />
     <Content Include="Views\Home\Deducciones.cshtml" />
-    <Content Include="Views\Home\Incapacidad.cshtml" />
-    <Content Include="Views\Home\Permisos.cshtml" />
-    <Content Include="Views\Home\Ausencia.cshtml" />
-    <Content Include="Views\Home\Embargos.cshtml" />
+    <Content Include="Views\Home\Prestaciones.cshtml" />
+    <Content Include="Views\Home\JornadaExtra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
